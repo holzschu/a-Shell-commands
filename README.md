@@ -7,9 +7,9 @@ shell commands, pre-compiled to webAssembly, ready to use in a-Shell
 
 Once compiled to webAssembly, binaries can be shared with other users of a-Shell.
 
-- ctags:  https://github.com/universal-ctags/ctags/
-- file: https://github.com/file/file/
-- tree: http://mama.indstate.edu/users/ice/tree/
+- [ctags](https://github.com/holzschu/a-Shell-commands/releases/download/0.1/ctags.wasm)/[readtags](https://github.com/holzschu/a-Shell-commands/releases/download/0.1/readtags.wasm):  https://github.com/universal-ctags/ctags/
+- [file](https://github.com/holzschu/a-Shell-commands/releases/download/0.1/file.wasm): https://github.com/file/file/
+- [tree](https://github.com/holzschu/a-Shell-commands/releases/download/0.1/tree.wasm): http://mama.indstate.edu/users/ice/tree/
 
 
 
