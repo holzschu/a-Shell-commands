@@ -16,8 +16,8 @@ The idea is that we can share pre-compiled commands. Submit yours through pull-r
 - [ctags](https://github.com/holzschu/a-Shell-commands/releases/download/0.1/ctags.wasm)/[readtags](https://github.com/holzschu/a-Shell-commands/releases/download/0.1/readtags.wasm):  https://github.com/universal-ctags/ctags/
 - [file](https://github.com/holzschu/a-Shell-commands/releases/download/0.1/file.wasm): https://github.com/file/file/
 - ffmpeg: https://www.ffmpeg.org
-  - [ffmpeg](https://github.com/holzschu/a-Shell-commands/releases/download/0.1/ffmpeg.wasm) (full version, all codecs enabled, 88 MB, requires powerful devices)
-  - [ffprobe](https://github.com/holzschu/a-Shell-commands/releases/download/0.1/ffprobe.wasm) (full version)
+  - [ffmpeg](https://github.com/holzschu/a-Shell-commands/releases/download/0.1/ffmpeg.wasm) (full version, all codecs enabled, 16 MB, might not run on all devices)
+  - [ffprobe](https://github.com/holzschu/a-Shell-commands/releases/download/0.1/ffprobe.wasm) (full version, 16 MB)
   - [ffmpeg_lite](https://github.com/holzschu/a-Shell-commands/releases/download/0.1/ffmpeg_lite.wasm) (H263, H264, Mpeg4, AAC, AC3 only, 3.2 MB)
 - [tree](https://github.com/holzschu/a-Shell-commands/releases/download/0.1/tree.wasm): http://mama.indstate.edu/users/ice/tree/
 - [xz](https://github.com/holzschu/a-Shell-commands/releases/download/0.1/xz.wasm), [xzdec](https://github.com/holzschu/a-Shell-commands/releases/download/0.1/xzdec.wasm), [lzmadec](https://github.com/holzschu/a-Shell-commands/releases/download/0.1/lzmadec.wasm), [lzmainfo](https://github.com/holzschu/a-Shell-commands/releases/download/0.1/lzmainfo.wasm): https://git.tukaani.org/xz
