@@ -14,6 +14,7 @@ The idea is that we can share pre-compiled commands. Submit yours through pull-r
 ## List of commands, with their source code:
 
 - [ctags](https://github.com/holzschu/a-Shell-commands/releases/download/0.1/ctags.wasm)/[readtags](https://github.com/holzschu/a-Shell-commands/releases/download/0.1/readtags.wasm):  https://github.com/universal-ctags/ctags/
+- [f2c](https://github.com/holzschu/a-Shell-commands/releases/download/0.1/f2c) and [libf2c.a](https://github.com/holzschu/a-Shell-commands/releases/download/0.1/libf2c.a). Compile Fortran code to C with `f2c file.f`, then compile the C code with `clang file.c -L libs -lf2c -D_WASI_EMULATED_SIGNAL -lwasi_emulated_signal`. 
 - [file](https://github.com/holzschu/a-Shell-commands/releases/download/0.1/file.wasm): https://github.com/file/file/
 - ffmpeg: https://www.ffmpeg.org
   - [ffmpeg](https://github.com/holzschu/a-Shell-commands/releases/download/0.1/ffmpeg.wasm) (all codecs enabled, external libs: libx264, zlib: 18 MB)
