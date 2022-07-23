@@ -20,6 +20,7 @@ The idea is that we can share pre-compiled commands. Submit yours through pull-r
   - `-L ` is followed by the directory where you actually installed `libf2c.a`
 - [json2csv](https://github.com/holzschu/a-Shell-commands/releases/download/0.1/json2csv): http://github.com/buger/jsonparser/
 - [lzmadec](https://github.com/holzschu/a-Shell-commands/releases/download/0.1/lzmadec.wasm), [lzmainfo](https://github.com/holzschu/a-Shell-commands/releases/download/0.1/lzmainfo.wasm): https://git.tukaani.org/xz
+- [sqlite3](https://github.com/holzschu/a-Shell-commands/releases/download/0.1/sqlite3.wasm)
 - [zip](https://github.com/holzschu/a-Shell-commands/releases/download/0.1/zip.wasm), [unzip](https://github.com/holzschu/a-Shell-commands/releases/download/0.1/unzip.wasm), [zipcloak](https://github.com/holzschu/a-Shell-commands/releases/download/0.1/zipcloak.wasm), [zipnote](https://github.com/holzschu/a-Shell-commands/releases/download/0.1/zipnote.wasm), [zipsplit](https://github.com/holzschu/a-Shell-commands/releases/download/0.1/zipsplit.wasm), [funzip](https://github.com/holzschu/a-Shell-commands/releases/download/0.1/funzip.wasm), [unzipsfx](https://github.com/holzschu/a-Shell-commands/releases/download/0.1/unzipsfx.wasm): http://infozip.sourceforge.net/UnZip.html
 
 
