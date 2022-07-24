@@ -13,6 +13,7 @@ The idea is that we can share pre-compiled commands. Submit yours through pull-r
 
 ## List of commands, with their source code:
 
+- [base64](https://github.com/holzschu/a-Shell-commands/releases/download/0.1/base64) http://base64.sourceforge.net
 - f2c: http://www.netlib.org/f2c/
   - [f2c](https://github.com/holzschu/a-Shell-commands/releases/download/0.1/f2c)
   - [libf2c.a](https://github.com/holzschu/a-Shell-commands/releases/download/0.1/libf2c.a)
