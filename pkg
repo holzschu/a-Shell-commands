@@ -9,5 +9,65 @@
 # search + regexp: pull list from server, grep with regexp
 # server: change address of package server
 
-# main url. Can be overridden by environment variable (how?)
-SERVER=https://github.com/holzschu/a-Shell-commands/blob/master/
+# main url. Can be overidden by environment variable
+if [ -z "$SERVER" ]
+then
+	server=$SERVER
+else
+	server=https://github.com/holzschu/a-Shell-commands/blob/master/
+fi
+
+usage() {
+cat << 'EOF'
+Usage: pkg [install name] [remove name] [list] [search expression] [server]
+  install: installs package "name"
+  remove: removes package "name"
+  list: list all installed packages
+  search: lists packages matching expression
+  server: changes package server
+EOF
+}
+
+list() {
+	ls -1 ~/Documents/.pkg/
+}
+
+search() {
+	expression=$1
+	curl -L $server/list | grep $expression
+}
+
+install() {
+	name=$1
+	curl -L $server/packages/$name -o ~/tmp/$name
+	chmod +x ~/tmp/$name
+	~/tmp/$name
+	rm ~/tmp/$name
+}
+
+remove() {
+	name=$1
+	if [ -x ~/.pkg/$name ]
+	then
+		~/.pkg/$name
+		rm ~/.pkg/$name
+	else
+		echo Package $name was not installed by pkg. Cannot remove.
+	fi
+}
+
+server() {
+	# TODO: check that the change is permanent (and for how long)
+	$server=$1
+	SERVER=$server
+	export $SERVER
+}
+
+case $1 in
+	# TODO: allow for multiple install (for loop on all arguments except first one)
+	install install($2);;
+	list list();;
+	remove remove($2);;
+	server server($2);;
+	search search($2);;
+esac
