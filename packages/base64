@@ -1,0 +1,6 @@
+#! /bin/sh
+# download command:
+curl -L https://github.com/holzschu/a-Shell-commands/releases/download/0.1/base64 --output-dir ~/Documents/bin --create-dir
+chmod +x ~/Documents/bin/base64
+# download uninstall information:
+curl -L --output-dir ~/Documents/.pkg --create-dir
