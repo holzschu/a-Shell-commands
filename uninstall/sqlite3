@@ -1,6 +1,6 @@
 #! /bin/sh
 # remove command
-rm ~/Documents/bin/sqlite3
+rm ~/Documents/bin/sqlite3.wasm
 # remove man page
 rm ~/Library/man/man1/sqlite3.1
 # refresh man database

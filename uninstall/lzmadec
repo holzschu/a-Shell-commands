@@ -1,0 +1,11 @@
+#! /bin/sh
+# remove command
+rm ~/Documents/bin/lzmadec.wasm
+rm ~/Documents/bin/lzmainfo.wasm
+# remove man page
+rm ~/Library/man/man1/lzmadec.1
+rm ~/Library/man/man1/lzmainfo.1
+# refresh man database
+mandocdb ~/Library/man
+#
+

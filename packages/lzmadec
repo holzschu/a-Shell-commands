@@ -1,0 +1,13 @@
+#! /bin/sh
+# download command:
+curl -L https://github.com/holzschu/a-Shell-commands/releases/download/0.1/lzmadec.wasm --output-dir ~/Documents/bin --create-dir
+chmod +x ~/Documents/bin/lzmadec.wasm
+curl -L https://github.com/holzschu/a-Shell-commands/releases/download/0.1/lzmainfo.wasm --output-dir ~/Documents/bin --create-dir
+chmod +x ~/Documents/bin/lzmainfo.wasm
+# download man page
+curl -l https://github.com/holzschu/a-shell-commands/blob/master/man/man1/lzmadec.1 --output-dir ~/library/man/man1 --create-dir
+curl -l https://github.com/holzschu/a-shell-commands/blob/master/man/man1/lzmainfo.1 --output-dir ~/library/man/man1 --create-dir
+# refresh man database
+mandocdb ~/Library/man
+# download uninstall information:
+curl -L https://github.com/holzschu/a-Shell-commands/blob/master/uninstall/lzmadec --output-dir ~/Documents/.pkg --create-dir

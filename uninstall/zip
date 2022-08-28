@@ -1,0 +1,10 @@
+#! /bin/sh
+for command in funzip unzip unzipsfx zip zipcloak zipnote zipsplit
+do
+    # remove command
+    rm ~/Documents/bin/$command.wasm
+    # remove man page
+    rm ~/Library/man/man1/$command.1
+done
+# refresh man database
+mandocdb ~/Library/man

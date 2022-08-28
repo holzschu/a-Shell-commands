@@ -1,0 +1,2 @@
+#! /bin/sh
+rm ~/Documents/bin/json2csv
