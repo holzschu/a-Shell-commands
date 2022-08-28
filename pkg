@@ -12,9 +12,9 @@
 # main url. Can be overidden by environment variable
 if [ -z "$SERVER" ]
 then
-	server=$SERVER
+	server=https://raw.githubusercontent.com/holzschu/a-Shell-commands/master/
 else
-	server=https://github.com/holzschu/a-Shell-commands/blob/master/
+	server=$SERVER
 fi
 
 usage() {
@@ -39,17 +39,18 @@ search() {
 
 install() {
 	name=$1
+	echo Downloading from $server/packages/$name -o ~/tmp/$name
 	curl -L $server/packages/$name -o ~/tmp/$name
 	chmod +x ~/tmp/$name
-	~/tmp/$name
-	rm ~/tmp/$name
+	sh ~/tmp/$name
+	# rm ~/tmp/$name
 }
 
 remove() {
 	name=$1
 	if [ -x ~/.pkg/$name ]
 	then
-		~/.pkg/$name
+		sh ~/.pkg/$name
 		rm ~/.pkg/$name
 	else
 		echo Package $name was not installed by pkg. Cannot remove.
