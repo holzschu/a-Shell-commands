@@ -1,0 +1,10 @@
+#! /bin/sh
+# remove command
+rm ~/Documents/bin/f2c
+rm ~/Library/lib/wasm32-wasi/libf2c.a
+# remove man page
+rm ~/Library/man/man1/f2c.1
+# refresh man database
+mandocdb ~/Library/man
+#
+

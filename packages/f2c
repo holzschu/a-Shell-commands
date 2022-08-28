@@ -1,0 +1,11 @@
+#! /bin/sh
+# download command:
+curl -L https://github.com/holzschu/a-Shell-commands/releases/download/0.1/f2c --output-dir ~/Documents/bin --create-dir
+chmod +x ~/Documents/bin/f2c
+curl -L https://github.com/holzschu/a-Shell-commands/releases/download/0.1/libf2c.a --output-dir ~/Library/lib/wasm32-wasi --create-dir
+# download man page
+curl -l https://github.com/holzschu/a-shell-commands/blob/master/man/man1/f2c.1 --output-dir ~/library/man/man1 --create-dir
+# refresh man database
+mandocdb ~/Library/man
+# download uninstall information:
+curl -L https://github.com/holzschu/a-Shell-commands/blob/master/uninstall/f2c --output-dir ~/Documents/.pkg --create-dir
