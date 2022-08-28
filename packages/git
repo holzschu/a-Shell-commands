@@ -1,0 +1,56 @@
+#!/bin/sh
+
+wrapper_script_contents () {
+cat << 'EOF'
+#!/bin/sh
+lg2 "$@"
+EOF
+}
+
+cat << EOF
+The git command cannot be included with
+a-Shell. Would you like to create a
+script at \$HOME/Documents/bin/git that
+wraps lg2 with the following contents?
+
+$(wrapper_script_contents)
+
+Keep in mind that git and lg2 options
+are not 100% compatible, and they also
+do not use the same configuration files
+or environment variables.
+
+EOF
+
+printf 'Create $HOME/Documents/bin/git? (y/n [n]) '
+
+read -r create_wrapper
+
+echo
+
+if [ "$create_wrapper" != y ] && [ "$create_wrapper" != Y ]; then
+  echo 'Exiting without creating wrapper.'
+  exit
+fi
+
+if [ ! -d "$HOME/Documents/bin" ]; then
+  echo 'The $HOME/Documents/bin directory does not exist.'
+  echo 'Exiting without creating wrapper.'
+  exit 1
+fi
+
+if [ -f "$HOME/Documents/bin/git" ]; then
+  echo 'The file ~/Documents/bin/git exists.'
+  echo 'Exiting without creating wrapper.'
+  exit 1
+fi
+
+echo 'Creating $HOME/Documents/bin/git'
+
+if ! wrapper_script_contents > "$HOME/Documents/bin/git"; then
+  echo
+  echo 'Creation failed.'
+  exit 1
+fi
+
+echo 'Creation complete'

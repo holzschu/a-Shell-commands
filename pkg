@@ -3,9 +3,11 @@
 # Tool to install/remove commands to a-Shell
 #
 # options:
-# install packageName: pull server/packageName.pkg, execute script packageName.pkg, create .pkg/packageName.del
-# remove packageName: execute .pkg/packageName.del
+# install packageName: pull server/packageName.pkg, execute script packageName.pkg, create .pkg/packageName
+# remove packageName: execute .pkg/packageName
 # list: show all installed packages
 # search + regexp: pull list from server, grep with regexp
+# server: change address of package server
 
-
+# main url. Can be overridden by environment variable (how?)
+SERVER=https://github.com/holzschu/a-Shell-commands/blob/master/
