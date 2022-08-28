@@ -1,0 +1,41 @@
+.TH LZMAINFO 1 "30 May 2005" "LZMA utils"
+.SH NAME
+lzmainfo \- show infomation stored in the LZMA compressed file header
+.SH SYNOPSIS
+.B lzmainfo
+[
+.B \-\-help
+|
+.I filename
+]
+.SH DESCRIPTION
+.B lzmainfo
+shows information stored in the LZMA compressed file header. It reads
+the first 13 bytes from the specified
+.IR filename ,
+decodes the header and prints it to the standard output in human
+readable format. If no
+.I filename
+is specified, the standard input is read.
+.PP
+Usually the most interesting information is the uncompressed size and
+the dictionary size. Uncompressed size can be shown only if the file is
+in the non-streamed LZMA format. The amount of memory required to
+decompress the file is a few kilobytes plus the dictionary size.
+.SH DIAGNOSTICS
+.B lzmainfo
+returns zero on success and non-zero on error.
+.SH AUTHORS
+.B lzmainfo
+is part of the LZMA utils written originally for the Tukaani Linux by
+Lasse Collin <lasse.collin@tukaani.org>.
+.br
+http://tukaani.org/lzma/
+.PP
+.B lzmainfo
+contains code from the LZMA SDK written by Igor Pavlov.
+.br
+http://7-zip.org/sdk.html
+.SH SEE ALSO
+.BR lzma (1),
+.BR lzmadec (1)

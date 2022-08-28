@@ -1,0 +1,55 @@
+.TH LZMADEC 1 "28 May 2005" "LZMA utils"
+.SH NAME
+lzmadec \- small and fast LZMA decoder
+.SH SYNOPSIS
+.B lzmadec
+.RB [ \-\-help ]
+.RI [ "everything else is ignored" ]
+.SH DESCRIPTION
+.B lzmadec
+is a small and fast decoder for LZMA compressed files.
+It is intended to work as a drop-in replacement for
+.B lzma
+in situations where available disk space is limited, only decoder is
+needed and the data can be decompressed from the standard input to the
+standard output. This has been achieved by simply ignoring all command
+line arguments except
+.BR \-\-help .
+.SH DIAGNOSTICS
+.B lzmadec
+returns
+.B 0
+on success and
+.B 1
+on error. Checking the exit status is the only way to detect errors because
+.B lzmadec
+never prints any messages except when
+.B \-\-help
+is specified.
+.SH EXAMPLES
+You can replace
+.B lzma
+executable with
+.B lzmadec
+for example in this kind of situations:
+.br
+.B lzma \-d < myfile.lzma > myfile || echo Error
+.br
+.B lzma \-d < myfile.lzma | less
+.br
+.B tar xf myfile.tar.lzma --use=lzma myfile1.bin myfile2.txt
+.br
+.B tar xYf myfile.tar.lzma
+(Requires tar patched to support LZMA.)
+.SH AUTHORS
+LZMAdec
+.RB ( lzmadec )
+is part of the LZMA utils written originally for the Tukaani Linux by
+Lasse Collin <lasse.collin@tukaani.org>.
+http://tukaani.org/lzma/
+.PP
+The actual decoding is done by the code from the LZMA SDK written by
+Igor Pavlov. http://7-zip.org/sdk.html
+.SH SEE ALSO
+.BR lzma (1),
+.BR lzmainfo (1)

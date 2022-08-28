@@ -1,0 +1,11 @@
+#! /bin/sh
+
+# Tool to install/remove commands to a-Shell
+#
+# options:
+# install packageName: pull server/packageName.pkg, execute script packageName.pkg, create .pkg/packageName.del
+# remove packageName: execute .pkg/packageName.del
+# list: show all installed packages
+# search + regexp: pull list from server, grep with regexp
+
+
