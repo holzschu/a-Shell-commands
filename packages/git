@@ -53,4 +53,6 @@ if ! wrapper_script_contents > "$HOME/Documents/bin/git"; then
   exit 1
 fi
 
+# uninstall information
+curl -L https://raw.githubusercontent.com/holzschu/a-Shell-commands/master/uninstall/git --output-dir ~/Documents/.pkg --create-dir
 echo 'Creation complete'

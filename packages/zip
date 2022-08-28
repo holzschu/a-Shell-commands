@@ -5,9 +5,9 @@ do
     curl -L https://github.com/holzschu/a-Shell-commands/releases/download/0.1/$command.wasm --output-dir ~/Documents/bin --create-dir
 	chmod +x ~/Documents/bin/$command.wasm
     # download man page
-    curl -l https://github.com/holzschu/a-shell-commands/blob/master/man/man1/$command.1 --output-dir ~/library/man/man1 --create-dir
+    curl -l https://raw.githubusercontent.com/holzschu/a-Shell-commands/master/man/man1/$command.1 --output-dir ~/library/man/man1 --create-dir
 done
 # refresh man database
 mandocdb ~/Library/man
 # download uninstall information:
-curl -L https://github.com/holzschu/a-Shell-commands/blob/master/uninstall/zip --output-dir ~/Documents/.pkg --create-dir
+curl -L https://raw.githubusercontent.com/holzschu/a-Shell-commands/master/uninstall/zip --output-dir ~/Documents/.pkg --create-dir

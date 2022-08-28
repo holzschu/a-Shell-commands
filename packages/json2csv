@@ -5,4 +5,4 @@ chmod +x ~/Documents/bin/json2csv
 # download man page
 # refresh man database
 # download uninstall information:
-curl -L https://github.com/holzschu/a-Shell-commands/blob/master/uninstall/json2csv --output-dir ~/Documents/.pkg --create-dir
+curl -L https://raw.githubusercontent.com/holzschu/a-Shell-commands/master/uninstall/json2csv --output-dir ~/Documents/.pkg --create-dir

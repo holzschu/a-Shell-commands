@@ -3,8 +3,8 @@
 curl -L https://github.com/holzschu/a-Shell-commands/releases/download/0.1/sqlite3.wasm --output-dir ~/Documents/bin --create-dir
 chmod +x ~/Documents/bin/sqlite3.wasm
 # download man page
-curl -L https://github.com/holzschu/a-Shell-commands/blob/master/man/man1/sqlite3.1 --output-dir ~/Library/man/man1 --create-dir
+curl -L https://raw.githubusercontent.com/holzschu/a-Shell-commands/master/man/man1/sqlite3.1 --output-dir ~/Library/man/man1 --create-dir
 # refresh man database
 mandocdb ~/Library/man
 # download uninstall information:
-curl -L https://github.com/holzschu/a-Shell-commands/blob/master/uninstall/sqlite3 --output-dir ~/Documents/.pkg --create-dir
+curl -L https://raw.githubusercontent.com/holzschu/a-Shell-commands/master/uninstall/sqlite3 --output-dir ~/Documents/.pkg --create-dir
