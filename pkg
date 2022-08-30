@@ -45,19 +45,22 @@ search() {
 
 install() {
 	name=$1
-	echo Downloading from $server/packages/$name -o ~/tmp/$name
+	echo Downloading $name
 	curl -L $server/packages/$name -o ~/tmp/$name --silent
 	chmod +x ~/tmp/$name
 	sh ~/tmp/$name
 	rm ~/tmp/$name
+	echo Done
 }
 
 remove() {
 	name=$1
-	if [ -x ~/Documents/.pkg/$name ]
+	if [ -f ~/Documents/.pkg/$name ]
 	then
+		echo Removing $name
 		sh ~/Documents/.pkg/$name
 		rm ~/Documents/.pkg/$name
+		echo Done
 	else
 		echo Package $name was not installed by pkg. Cannot remove it.
 	fi
