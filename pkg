@@ -47,9 +47,9 @@ install() {
 	for name in $@
 	do
 		if [ $# -ge 2 ]
-		do
+		then
 			echo Processing $name
-		done
+		fi
 		curl -L $server/list --silent | grep $name > ~/tmp/packageList
 		length=`wc -l < ~/tmp/packageList`
 		if [ $length -eq 0 ]
@@ -76,9 +76,9 @@ remove() {
 	for name in $@
 	do
 		if [ $# -ge 2 ]
-		do
+		then
 			echo Processing $name
-		done
+		fi
 		if [ -f ~/Documents/.pkg/$name ]
 		then
 			echo Removing $name
