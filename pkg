@@ -45,19 +45,24 @@ search() {
 
 install() {
 	name=$1
-	curl -L $server/list --silent | grep ^$name$ > ~/tmp/package
-	if [ -s ~/tmp/package ]
+	curl -L $server/list --silent | grep $name > ~/tmp/packageList
+	length=`wc -l < ~/tmp/packageList`
+	if [ $length -eq 0 ]
 	then
 		echo Package $name not found
-	else
-		echo Downloading $name
-		curl -L $server/packages/$name -o ~/tmp/$name --silent
-		chmod +x ~/tmp/$name
-		sh ~/tmp/$name
-		rm ~/tmp/$name
+	elif [ $length -eq 1 ]
+		packageName=`cat ~/tmp/packageList`
+		echo Downloading $packageName
+		curl -L $server/packages/$packageName -o ~/tmp/$name --silent
+		chmod +x ~/tmp/$packageName
+		sh ~/tmp/$packageName
+		rm ~/tmp/$packageName
 		echo Done
+	else
+		echo Package $name unclear. Did you mean:
+		cat ~/tmp/packageList
 	fi
-	rm ~/tmp/package
+	rm ~/tmp/packageList
 }
 
 remove() {
