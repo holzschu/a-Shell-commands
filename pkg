@@ -45,12 +45,19 @@ search() {
 
 install() {
 	name=$1
-	echo Downloading $name
-	curl -L $server/packages/$name -o ~/tmp/$name --silent
-	chmod +x ~/tmp/$name
-	sh ~/tmp/$name
-	rm ~/tmp/$name
-	echo Done
+	curl -L $server/list --silent | grep $name > ~/tmp/package
+	if [ -s ~/tmp/package ]
+	then
+		echo Package $name not found
+	else
+		echo Downloading $name
+		curl -L $server/packages/$name -o ~/tmp/$name --silent
+		chmod +x ~/tmp/$name
+		sh ~/tmp/$name
+		rm ~/tmp/$name
+		echo Done
+	fi
+	rm ~/tmp/package
 }
 
 remove() {
