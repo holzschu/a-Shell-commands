@@ -33,14 +33,20 @@ list() {
 }
 
 search() {
-	expression=$1
-	curl -L $server/list | grep $expression
+	echo Packages available:
+	if [ -z $1 ]
+	then
+		curl -L $server/list --silent
+	else
+		expression=$1
+		curl -L $server/list --silent | grep $expression
+	fi
 }
 
 install() {
 	name=$1
 	echo Downloading from $server/packages/$name -o ~/tmp/$name
-	curl -L $server/packages/$name -o ~/tmp/$name
+	curl -L $server/packages/$name -o ~/tmp/$name --silent
 	chmod +x ~/tmp/$name
 	sh ~/tmp/$name
 	rm ~/tmp/$name
