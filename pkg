@@ -44,7 +44,6 @@ search() {
 }
 
 install() {
-	echo arguments received: $@
 	name=$1
 	curl -L $server/list --silent | grep $name > ~/tmp/packageList
 	length=`wc -l < ~/tmp/packageList`
@@ -83,11 +82,11 @@ remove() {
 
 case $1 in
 	# TODO: allow for multiple install (for loop on all arguments except first one)
-	install) install ${@:2};;
-	update) install ${@:2};;
-	upgrade) install ${@:2};;
+	install) install $2;;
+	update) install $2;;
+	upgrade) install $2;;
 	list) list;;
-	remove) remove ${@:2};;
-	search) search ${@:2};;
+	remove) remove $2;;
+	search) search $2;;
 	*) usage
 esac
