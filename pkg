@@ -65,7 +65,7 @@ install() {
 			rm ~/tmp/$packageName
 			echo Done
 		else
-			echo Package $name unclear. Did you mean:
+			echo Package name $name unclear. Did you mean:
 			cat ~/tmp/packageList
 		fi
 		rm ~/tmp/packageList
