@@ -45,7 +45,7 @@ search() {
 
 install() {
 	name=$1
-	curl -L $server/list --silent | grep $name > ~/tmp/package
+	curl -L $server/list --silent | grep ^$name$ > ~/tmp/package
 	if [ -s ~/tmp/package ]
 	then
 		echo Package $name not found
