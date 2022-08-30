@@ -44,49 +44,57 @@ search() {
 }
 
 install() {
-	name=$1
-	curl -L $server/list --silent | grep $name > ~/tmp/packageList
-	length=`wc -l < ~/tmp/packageList`
-	if [ $length -eq 0 ]
-	then
-		echo Package $name not found
-	elif [ $length -eq 1 ]
-	then
-		packageName=`cat ~/tmp/packageList`
-		echo Downloading $packageName
-		curl -L $server/packages/$packageName -o ~/tmp/$packageName --silent
-		chmod +x ~/tmp/$packageName
-		sh ~/tmp/$packageName
-		rm ~/tmp/$packageName
-		echo Done
-	else
-		echo Package $name unclear. Did you mean:
-		cat ~/tmp/packageList
-	fi
-	rm ~/tmp/packageList
+	for name in $@
+	do
+		curl -L $server/list --silent | grep $name > ~/tmp/packageList
+		length=`wc -l < ~/tmp/packageList`
+		if [ $length -eq 0 ]
+		then
+			echo Package $name not found
+		elif [ $length -eq 1 ]
+		then
+			packageName=`cat ~/tmp/packageList`
+			echo Downloading $packageName
+			curl -L $server/packages/$packageName -o ~/tmp/$packageName --silent
+			chmod +x ~/tmp/$packageName
+			sh ~/tmp/$packageName
+			rm ~/tmp/$packageName
+			echo Done
+		else
+			echo Package $name unclear. Did you mean:
+			cat ~/tmp/packageList
+		fi
+		rm ~/tmp/packageList
+	done
 }
 
 remove() {
-	name=$1
-	if [ -f ~/Documents/.pkg/$name ]
-	then
-		echo Removing $name
-		sh ~/Documents/.pkg/$name
-		rm ~/Documents/.pkg/$name
-		mandocdb ~/Library/man
-		echo Done
-	else
-		echo Package $name was not installed by pkg. Cannot remove it.
-	fi
+	for name in $@
+	do
+		if [ -f ~/Documents/.pkg/$name ]
+		then
+			echo Removing $name
+			sh ~/Documents/.pkg/$name
+			rm ~/Documents/.pkg/$name
+			mandocdb ~/Library/man
+			echo Done
+		else
+			echo Package $name was not installed by pkg. Cannot remove it.
+		fi
+	done
 }
 
 case $1 in
 	# TODO: allow for multiple install (for loop on all arguments except first one)
-	install) install $2;;
-	update) install $2;;
-	upgrade) install $2;;
+	install|update|upgrade) 
+	    shift
+	    install $@
+	    ;;
 	list) list;;
-	remove) remove $2;;
-	search) search $2;;
+	remove) 
+	    shift
+	    remove $@
+	    ;;
+	search) search $@;;
 	*) usage
 esac
