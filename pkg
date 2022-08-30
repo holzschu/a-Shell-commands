@@ -103,6 +103,6 @@ case $1 in
 	    shift
 	    remove $@
 	    ;;
-	search) search $@;;
+	search) search $2;;
 	*) usage
 esac
