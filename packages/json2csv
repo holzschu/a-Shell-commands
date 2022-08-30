@@ -1,8 +1,8 @@
 #! /bin/sh
 # download command:
-curl -L https://github.com/holzschu/a-Shell-commands/releases/download/0.1/json2csv -o ~/Documents/bin/json2csv --create-dirs
+curl -L https://github.com/holzschu/a-Shell-commands/releases/download/0.1/json2csv -o ~/Documents/bin/json2csv --create-dirs --silent
 chmod +x ~/Documents/bin/json2csv
 # download man page
 # refresh man database
 # download uninstall information:
-curl -L https://raw.githubusercontent.com/holzschu/a-Shell-commands/master/uninstall/json2csv -o ~/Documents/.pkg/json2csv --create-dirs
+curl -L https://raw.githubusercontent.com/holzschu/a-Shell-commands/master/uninstall/json2csv -o ~/Documents/.pkg/json2csv --create-dirs --silent
