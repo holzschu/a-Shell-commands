@@ -51,6 +51,7 @@ install() {
 	then
 		echo Package $name not found
 	elif [ $length -eq 1 ]
+	then
 		packageName=`cat ~/tmp/packageList`
 		echo Downloading $packageName
 		curl -L $server/packages/$packageName -o ~/tmp/$name --silent
