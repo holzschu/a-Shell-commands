@@ -82,7 +82,7 @@ remove() {
 
 server() {
 	# TODO: check that the change is permanent (and for how long)
-	$server=$1
+	server=$1
 	export SERVER=$server
 }
 
