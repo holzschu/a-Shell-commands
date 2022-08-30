@@ -29,7 +29,12 @@ EOF
 }
 
 list() {
-	ls -1 ~/Documents/.pkg/
+	if [ -d ~/Documents/.pkg ]
+	then
+		ls -1 ~/Documents/.pkg/	
+	else
+		echo No packages installed yet
+	fi
 }
 
 search() {
