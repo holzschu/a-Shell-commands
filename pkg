@@ -54,7 +54,7 @@ install() {
 	then
 		packageName=`cat ~/tmp/packageList`
 		echo Downloading $packageName
-		curl -L $server/packages/$packageName -o ~/tmp/$name --silent
+		curl -L $server/packages/$packageName -o ~/tmp/$packageName --silent
 		chmod +x ~/tmp/$packageName
 		sh ~/tmp/$packageName
 		rm ~/tmp/$packageName
