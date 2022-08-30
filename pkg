@@ -55,7 +55,7 @@ install() {
 		then
 			echo Processing $name
 		fi
-		curl -L $server/list --silent | grep $name > ~/tmp/packageList
+		curl -L $server/list --silent | grep ^$name > ~/tmp/packageList
 		length=`wc -l < ~/tmp/packageList`
 		if [ $length -eq 0 ]
 		then
