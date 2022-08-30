@@ -7,24 +7,24 @@
 # remove packageName: execute .pkg/packageName
 # list: show all installed packages
 # search + regexp: pull list from server, grep with regexp
-# server: change address of package server
 
 # main url. Can be overidden by environment variable
-if [ -z "$SERVER" ]
+if [ -z "$PKG_SERVER" ]
 then
 	server=https://raw.githubusercontent.com/holzschu/a-Shell-commands/master/
 else
-	server=$SERVER
+	server=$PKG_SERVER
 fi
 
 usage() {
 cat << 'EOF'
-Usage: pkg [install name] [remove name] [list] [search expression] [server]
+Usage: pkg [install name] [remove name] [list] [search expression]
   install: installs package "name"
   remove: removes package "name"
   list: list all installed packages
   search: lists packages matching expression
-  server: changes package server
+
+  pkg will search for packages on $PKG_SERVER, if it set, and https://github.com/holzschu/a-Shell-commands otherwise
 EOF
 }
 
@@ -44,6 +44,7 @@ search() {
 }
 
 install() {
+	echo arguments received: $@
 	name=$1
 	curl -L $server/list --silent | grep $name > ~/tmp/packageList
 	length=`wc -l < ~/tmp/packageList`
@@ -80,20 +81,13 @@ remove() {
 	fi
 }
 
-server() {
-	# TODO: check that the change is permanent (and for how long)
-	server=$1
-	export SERVER=$server
-}
-
 case $1 in
 	# TODO: allow for multiple install (for loop on all arguments except first one)
-	install) install $2;;
-	update) install $2;;
-	upgrade) install $2;;
+	install) install "${@:2}";;
+	update) install "${@:2}";;
+	upgrade) install "${@:2}";;
 	list) list;;
-	remove) remove $2;;
-	server) server $2;;
-	search) search $2;;
+	remove) remove "${@:2}";;
+	search) search "${@:2}";;
 	*) usage
 esac
