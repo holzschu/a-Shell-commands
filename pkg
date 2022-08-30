@@ -73,6 +73,7 @@ remove() {
 		echo Removing $name
 		sh ~/Documents/.pkg/$name
 		rm ~/Documents/.pkg/$name
+		mandocdb ~/Library/man
 		echo Done
 	else
 		echo Package $name was not installed by pkg. Cannot remove it.
@@ -82,8 +83,7 @@ remove() {
 server() {
 	# TODO: check that the change is permanent (and for how long)
 	$server=$1
-	SERVER=$server
-	export $SERVER
+	export SERVER=$server
 }
 
 case $1 in
