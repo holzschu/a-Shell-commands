@@ -3,5 +3,6 @@ f2c
 git
 json2csv
 lzmadec
+paste
 sqlite3
 zip
