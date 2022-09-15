@@ -6,7 +6,7 @@ packagename=${0##*/}
 # remove command
 rm ~/Documents/bin/$packagename
 # remove dictionary 
-rm ~/Library/usr/share/dict/words
+rm ~/Library/share/dict/words
 
 # remove man page
 rm ~/Library/man/man1/$packagename.1
