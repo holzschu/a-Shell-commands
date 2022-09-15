@@ -1,7 +1,7 @@
 #! /bin/sh
 # Default install file for packages:
 
-packagename=`basename $0`
+packagename=${0##*/}
 
 # download command:
 curl -L https://github.com/holzschu/a-Shell-commands/releases/download/0.1/$packagename -o ~/Documents/bin/$packagename --create-dirs --silent
