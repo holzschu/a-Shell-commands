@@ -1,0 +1,19 @@
+#! /bin/sh
+# install file for mmd6 auxiliary files:
+
+packagename=${0##*/}
+
+# download archive:
+curl -L https://github.com/holzschu/a-Shell-commands/releases/download/0.1/mmd6.tar.gz -o ~/tmp/mmd6.tar.gz --create-dirs --silent
+
+mkdir -p ~/Library/texlive/texmf-local/tex/latex/
+cd  ~/Library/texlive/texmf-local/tex/latex/
+tar -xzf ~/tmp/mmd6.tar.gz 
+cd -
+mktexlsr
+
+rm ~/tmp/mmd6.tar.gz
+
+# download uninstall information:
+curl -L https://raw.githubusercontent.com/holzschu/a-Shell-commands/master/uninstall/$packagename -o ~/Documents/.pkg/$packagename --create-dirs --silent
+
