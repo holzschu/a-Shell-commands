@@ -35,12 +35,12 @@ fi
 
 if [ ! -d "$HOME/Documents/bin" ]; then
   echo 'The $HOME/Documents/bin directory does not exist.'
-  echo 'Exiting without creating wrapper.'
-  exit 1
+  echo 'Creating it first.'
+  mkdir -p $HOME/Documents/bin
 fi
 
 if [ -f "$HOME/Documents/bin/git" ]; then
-  echo 'The file ~/Documents/bin/git exists.'
+  echo 'The file ~/Documents/bin/git already exists.'
   echo 'Exiting without creating wrapper.'
   exit 1
 fi
