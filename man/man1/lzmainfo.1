@@ -1,41 +1,60 @@
-.TH LZMAINFO 1 "30 May 2005" "LZMA utils"
+.\"
+.\" Author: Lasse Collin
+.\"
+.\" This file has been put into the public domain.
+.\" You can do whatever you want with this file.
+.\"
+.TH LZMAINFO 1 "2013-06-30" "Tukaani" "XZ Utils"
 .SH NAME
-lzmainfo \- show infomation stored in the LZMA compressed file header
+lzmainfo \- show information stored in the .lzma file header
 .SH SYNOPSIS
 .B lzmainfo
-[
-.B \-\-help
-|
-.I filename
-]
+.RB [ \-\-help ]
+.RB [ \-\-version ]
+.RI [ file... ]
 .SH DESCRIPTION
 .B lzmainfo
-shows information stored in the LZMA compressed file header. It reads
-the first 13 bytes from the specified
-.IR filename ,
-decodes the header and prints it to the standard output in human
-readable format. If no
-.I filename
-is specified, the standard input is read.
+shows information stored in the
+.B .lzma
+file header.
+It reads the first 13 bytes from the specified
+.IR file ,
+decodes the header, and prints it to standard output in human
+readable format.
+If no
+.I files
+are given or
+.I file
+is
+.BR \- ,
+standard input is read.
 .PP
-Usually the most interesting information is the uncompressed size and
-the dictionary size. Uncompressed size can be shown only if the file is
-in the non-streamed LZMA format. The amount of memory required to
-decompress the file is a few kilobytes plus the dictionary size.
-.SH DIAGNOSTICS
-.B lzmainfo
-returns zero on success and non-zero on error.
-.SH AUTHORS
-.B lzmainfo
-is part of the LZMA utils written originally for the Tukaani Linux by
-Lasse Collin <lasse.collin@tukaani.org>.
-.br
-http://tukaani.org/lzma/
+Usually the most interesting information is
+the uncompressed size and the dictionary size.
+Uncompressed size can be shown only if
+the file is in the non-streamed
+.B .lzma
+format variant.
+The amount of memory required to decompress the file is
+a few dozen kilobytes plus the dictionary size.
 .PP
 .B lzmainfo
-contains code from the LZMA SDK written by Igor Pavlov.
-.br
-http://7-zip.org/sdk.html
-.SH SEE ALSO
-.BR lzma (1),
-.BR lzmadec (1)
+is included in XZ Utils primarily for
+backward compatibility with LZMA Utils.
+.SH "EXIT STATUS"
+.TP
+.B 0
+All is good.
+.TP
+.B 1
+An error occurred.
+.SH BUGS
+.B lzmainfo
+uses
+.B MB
+while the correct suffix would be
+.B MiB
+(2^20 bytes).
+This is to keep the output compatible with LZMA Utils.
+.SH "SEE ALSO"
+.BR xz (1)
