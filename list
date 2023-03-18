@@ -13,6 +13,7 @@ false
 f2c
 fmt
 fold
+gawk
 getopt
 git
 hexdump
@@ -33,4 +34,5 @@ split
 sqlite3
 unexpand
 which
+xz
 zip
