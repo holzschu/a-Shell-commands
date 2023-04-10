@@ -1,6 +1,7 @@
 banner
 basename
 base64
+cal
 col
 colrm
 column
@@ -25,6 +26,7 @@ look
 lzmadec
 mktemp
 mmd6-tex-files
+ncal
 nl
 paste
 printf
