@@ -11,7 +11,9 @@ cd  ~/Library
 tar -xzf ~/tmp/markdown-it.tar.gz 
 mkdir -p ~/Documents/bin
 mv markdown-it.js ~/Documents/bin/
+mv markdown-viewer.sh ~/Documents/bin/
 chmod +x ~/Documents/bin/markdown-it.js
+chmod +x ~/Documents/bin/markdown-viewer.sh
 cd -
 
 rm ~/tmp/markdown-it.tar.gz

@@ -4,6 +4,7 @@
 packagename=${0##*/}
 
 rm ~/Documents/bin/markdown-it.js
+rm ~/Documents/bin/markdown-viewer.sh
 # Remove all npm packages installed by markdown-it.
 # This will create an issue when another JS command shares these packages
 # For the time being, there are none.
@@ -116,4 +117,5 @@ rm -rf ~/Library/node_modules/uc.micro
 rm -rf ~/Library/node_modules/unist-util-stringify-position
 rm -rf ~/Library/node_modules/uvu
 rm -rf ~/Library/node_modules/web-worker
-
+rm ~/Library/node_modules/markdown-viewer.html
+rm ~/Library/node_modules/markdown-viewer.js
