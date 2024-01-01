@@ -1,0 +1,21 @@
+#! /bin/sh
+# install file for mmd6 auxiliary files:
+
+packagename=${0##*/}
+
+# download archive:
+curl -L https://github.com/holzschu/a-Shell-commands/releases/download/0.1/codemirror.tar.gz -o ~/tmp/codemirror.tar.gz --create-dirs --silent
+
+mkdir -p ~/Library/node_modules
+cd  ~/Library/node_modules
+tar -xzf ~/tmp/codemirror.tar.gz --strip-components 1
+mkdir -p ~/Documents/bin
+mv codemirror.sh ~/Documents/bin/
+chmod +x ~/Documents/bin/codemirror.sh
+cd -
+
+rm ~/tmp/codemirror.tar.gz
+
+# download uninstall information:
+curl -L https://raw.githubusercontent.com/holzschu/a-Shell-commands/master/uninstall/$packagename -o ~/Documents/.pkg/$packagename --create-dirs --silent
+
