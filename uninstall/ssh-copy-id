@@ -1,0 +1,32 @@
+#! /bin/sh
+
+# Default uninstall file for packages:
+packagename=${0##*/}
+
+# remove command
+rm ~/Documents/bin/$packagename
+# remove man page
+rm ~/Library/man/man1/$packagename.1
+
+# uninstall dirname and expr, but only if they weren't installed separately:
+
+if [ -f ~/Documents/.pkg/dirname ]
+then
+    echo "Not removing dirname (installed separately)"
+else
+	echo "Removing dirname"
+	rm ~/Documents/bin/dirname
+	rm ~/Library/man/man1/dirname.1
+fi
+
+if [ -f ~/Documents/.pkg/expr ]
+then
+    echo "Not removing expr (installed separately)"
+else
+	echo "Removing expr"
+	rm ~/Documents/bin/expr
+	rm ~/Library/man/man1/expr.1
+fi
+
+# refresh man database
+mandocdb ~/Library/man
