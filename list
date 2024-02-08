@@ -12,6 +12,7 @@ csplit
 cut
 dirname
 expand
+expr
 false
 f2c
 fmt
