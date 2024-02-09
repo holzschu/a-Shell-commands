@@ -37,6 +37,7 @@ paste
 printf
 rs
 seq
+ssh-copy-id
 split
 sqlite3
 unexpand
