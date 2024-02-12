@@ -1,6 +1,5 @@
 ace-editor
 banner
-basename
 base64
 cal
 codemirror
@@ -10,9 +9,7 @@ column
 comm
 csplit
 cut
-dirname
 expand
-expr
 false
 f2c
 fmt

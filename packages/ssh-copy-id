@@ -1,14 +1,10 @@
 #! /bin/sh
 
-echo Installing dirname and expr:
+echo Installing mktemp:
 
-curl -L https://github.com/holzschu/a-Shell-commands/releases/download/0.1/dirname -o ~/Documents/bin/dirname --create-dirs --silent
-chmod +x ~/Documents/bin/dirname
-curl -L https://raw.githubusercontent.com/holzschu/a-Shell-commands/master/man/man1/dirname.1 -o ~/Library/man/man1/dirname.1 --create-dirs --silent
-
-curl -L https://github.com/holzschu/a-Shell-commands/releases/download/0.1/expr -o ~/Documents/bin/expr --create-dirs --silent
-chmod +x ~/Documents/bin/expr
-curl -L https://raw.githubusercontent.com/holzschu/a-Shell-commands/master/man/man1/expr.1 -o ~/Library/man/man1/expr.1 --create-dirs --silent
+curl -L https://github.com/holzschu/a-Shell-commands/releases/download/0.1/mktemp -o ~/Documents/bin/mktemp --create-dirs --silent
+chmod +x ~/Documents/bin/mktemp
+curl -L https://raw.githubusercontent.com/holzschu/a-Shell-commands/master/man/man1/mktemp.1 -o ~/Library/man/man1/mktemp.1 --create-dirs --silent
 
 
 # Default install file for packages (here ssh-copy-id):

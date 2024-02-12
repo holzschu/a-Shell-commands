@@ -10,22 +10,13 @@ rm ~/Library/man/man1/$packagename.1
 
 # uninstall dirname and expr, but only if they weren't installed separately:
 
-if [ -f ~/Documents/.pkg/dirname ]
+if [ -f ~/Documents/.pkg/mktemp ]
 then
-    echo "Not removing dirname (installed separately)"
+    echo "Not removing mktemp (installed separately)"
 else
-	echo "Removing dirname"
-	rm ~/Documents/bin/dirname
-	rm ~/Library/man/man1/dirname.1
-fi
-
-if [ -f ~/Documents/.pkg/expr ]
-then
-    echo "Not removing expr (installed separately)"
-else
-	echo "Removing expr"
-	rm ~/Documents/bin/expr
-	rm ~/Library/man/man1/expr.1
+	echo "Removing mktemp"
+	rm ~/Documents/bin/mktemp
+	rm ~/Library/man/man1/mktemp.1
 fi
 
 # refresh man database
