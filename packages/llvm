@@ -11,6 +11,8 @@ tar -xzf ~/tmp/llvm.tar.gz
 cd -
 
 rm ~/tmp/llvm.tar.gz
+# update commands list:
+updateCommands
 
 # download uninstall information:
 curl -L https://raw.githubusercontent.com/holzschu/a-Shell-commands/master/uninstall/$packagename -o ~/Documents/.pkg/$packagename --create-dirs --silent
