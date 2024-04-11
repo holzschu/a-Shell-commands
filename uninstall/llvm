@@ -1,0 +1,6 @@
+#! /bin/sh
+
+# Default uninstall file for packages:
+packagename=${0##*/}
+
+rm -rf ~/Library/usr
