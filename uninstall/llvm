@@ -4,3 +4,5 @@
 packagename=${0##*/}
 
 rm -rf ~/Library/usr
+# update commands list:
+updateCommands
