@@ -10,7 +10,7 @@ then
 fi
 # download archive:
 echo "Downloading the texlive-2024 distribution: (this may take a while)"
-curl -L https://github.com/holzschu/a-Shell-commands/releases/download/0.1/texlive.tar.gz -o ~/tmp/texlive.tar.gz --create-dirs 
+curl -L https://github.com/holzschu/a-Shell-commands/releases/download/0.1/texlive_2024.tar.gz -o ~/tmp/texlive.tar.gz --create-dirs 
 echo "Downloading done, unpacking:"
 
 mkdir -p ~/Library/texlive
