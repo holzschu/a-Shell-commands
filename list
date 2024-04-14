@@ -38,6 +38,8 @@ seq
 split
 sqlite3
 ssh-copy-id
+texlive
+texlive_fonts
 unexpand
 which
 xz
