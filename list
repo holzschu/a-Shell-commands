@@ -23,6 +23,7 @@ jot
 json2csv
 lam
 look
+llvm
 lzmadec
 markdown-it
 mktemp
@@ -37,6 +38,8 @@ rs
 seq
 split
 sqlite3
+texlive
+texlive_fonts
 unexpand
 which
 xz
