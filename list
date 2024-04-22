@@ -32,11 +32,11 @@ ncal
 nl
 paste
 printf
+rg
 rs
 seq
 split
 sqlite3
-ssh-copy-id
 unexpand
 which
 xz
