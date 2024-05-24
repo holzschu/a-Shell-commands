@@ -38,6 +38,7 @@ rs
 seq
 split
 sqlite3
+strings
 texlive
 texlive_fonts
 unexpand
