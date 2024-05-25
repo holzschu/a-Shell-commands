@@ -4,6 +4,7 @@
 packagename=${0##*/}
 
 rm ~/Documents/bin/codemirror.sh
+rm -rf ~/Library/codemirror*
 rm -rf ~/Library/node_modules/codemirror*
 rm -rf ~/Library/node_modules/@codemirror
 rm -rf ~/Library/node_modules/@lezer
