@@ -18,6 +18,7 @@ gawk
 getopt
 git
 hexdump
+imgcat
 join
 jot
 json2csv
