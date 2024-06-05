@@ -2,7 +2,8 @@
 # download command:
 curl -L https://github.com/holzschu/a-Shell-commands/releases/download/0.1/f2c -o ~/Documents/bin/f2c --create-dirs --silent
 chmod +x ~/Documents/bin/f2c
-curl -L https://github.com/holzschu/a-Shell-commands/releases/download/0.1/libf2c.a -o ~/Library/lib/wasm32-wasi/libf2c.a --create-dirs --silent
+curl -L https://github.com/holzschu/a-Shell-commands/releases/download/0.1/libf2c.a -o ~/Library/usr/lib/wasm32-wasi/libf2c.a --create-dirs --silent
+curl -L https://github.com/holzschu/a-Shell-commands/releases/download/0.1/f2c.h -o ~/Library/usr/include/wasm32-wasi/f2c.h --create-dirs --silent
 # download man page
 curl -l https://raw.githubusercontent.com/holzschu/a-Shell-commands/master/man/man1/f2c.1 -o ~/Library/man/man1/f2c.1 --create-dirs --silent
 # refresh man database
