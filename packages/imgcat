@@ -2,7 +2,7 @@
 # Default install file for packages:
 
 #requirement:
-if [ ! -r $HOME/bin/base64 ]; then
+if [ ! -r $APPDIR/bin/base64 ]; then
 	pkg install base64
 fi
 
