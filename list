@@ -18,6 +18,7 @@ gawk
 getopt
 git
 gnu-pw-mgr
+graphviz
 hexdump
 imgcat
 join

@@ -1,0 +1,21 @@
+#! /bin/sh
+# Default install file for packages:
+
+packagename=${0##*/}
+
+# download archive:
+curl -L https://github.com/holzschu/a-Shell-commands/releases/download/0.1/$packagename.tar.gz -o ~/tmp/$packagename.tar.gz --create-dirs --silent
+cd ~/tmp
+tar -xzf ~/tmp/$packagename.tar.gz
+mkdir -p ~/Documents/bin
+mv graphviz_install/bin/* ~/Documents/bin
+mkdir -p ~/Library/man/man1
+mkdir -p ~/Library/man/man7
+mv graphviz_install/man/man1/* ~/Library/man/man1/
+mv graphviz_install/man/man7/* ~/Library/man/man7/
+rm -rf graphviz_install
+
+# refresh man database
+mandocdb ~/Library/man
+# download uninstall information:
+curl -L https://raw.githubusercontent.com/holzschu/a-Shell-commands/master/uninstall/$packagename -o ~/Documents/.pkg/$packagename --create-dirs --silent
