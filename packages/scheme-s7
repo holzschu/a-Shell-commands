@@ -12,4 +12,4 @@ echo "s7 is a Scheme interpreter. Manual available here: https://ccrma.stanford.
 echo "Binary installed in ~/Documents/bin/repl. Scheme files installed in ~/Library/share/s7."
 
 # download uninstall information:
-curl -L https://raw.githubusercontent.com/holzschu/a-Shell-commands/master/uninstall/scheme-s7 -o ~/Documents/.pkg/paste --create-dirs --silent
+curl -L https://raw.githubusercontent.com/holzschu/a-Shell-commands/master/uninstall/scheme-s7 -o ~/Documents/.pkg/scheme-s7 --create-dirs --silent
