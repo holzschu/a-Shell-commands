@@ -1,0 +1,5 @@
+#! /bin/sh
+# remove command
+rm ~/Documents/bin/repl
+# remove scheme files:
+rm -rf ~/Library/share/s7

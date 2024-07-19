@@ -41,6 +41,7 @@ paste
 printf
 rg
 rs
+scheme-s7
 seq
 split
 sqlite3
