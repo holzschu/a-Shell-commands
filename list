@@ -50,5 +50,8 @@ texlive
 texlive_fonts
 unexpand
 which
+xmlcatalog
+xmllint
+xsltproc
 xz
 zip

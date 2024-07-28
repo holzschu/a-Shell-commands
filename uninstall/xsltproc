@@ -1,0 +1,12 @@
+#! /bin/sh
+
+# Default uninstall file for packages:
+packagename=${0##*/}
+
+# remove command
+rm ~/Documents/bin/$packagename
+# remove man page
+rm ~/Library/man/man1/$packagename.1
+# refresh man database
+mandocdb ~/Library/man
+
