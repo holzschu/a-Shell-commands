@@ -1,10 +1,12 @@
 #! /bin/sh
 # download command:
 echo Downloading xz + xzdec 
-curl -L https://github.com/holzschu/a-Shell-commands/releases/download/0.1/xz -o ~/Documents/bin/xz --create-dirs --silent
-chmod +x ~/Documents/bin/xz
-curl -L https://github.com/holzschu/a-Shell-commands/releases/download/0.1/xzdec -o ~/Documents/bin/xzdec --create-dirs --silent
-chmod +x ~/Documents/bin/xzdec
+rm -f  ~/Documents/bin/xz
+curl -L https://github.com/holzschu/a-Shell-commands/releases/download/0.1/xz -o ~/Documents/bin/xz.wasm3 --create-dirs --silent
+chmod +x ~/Documents/bin/xz.wasm3
+rm -f ~/Documents/bin/xzdec
+curl -L https://github.com/holzschu/a-Shell-commands/releases/download/0.1/xzdec -o ~/Documents/bin/xzdec.wasm3 --create-dirs --silent
+chmod +x ~/Documents/bin/xzdec.wasm3
 # download man page
 echo Downloading man pages
 curl -l https://raw.githubusercontent.com/holzschu/a-Shell-commands/master/man/man1/xz.1 -o ~/Library/man/man1/xz.1 --create-dirs --silent
