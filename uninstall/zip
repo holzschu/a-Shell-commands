@@ -2,7 +2,8 @@
 for command in funzip unzip unzipsfx zip zipcloak zipnote zipsplit
 do
     # remove command
-    rm ~/Documents/bin/$command.wasm
+    rm -f ~/Documents/bin/$command.wasm
+    rm -f ~/Documents/bin/$command.wasm3
     # remove man page
     rm ~/Library/man/man1/$command.1
 done

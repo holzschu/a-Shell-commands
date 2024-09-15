@@ -3,7 +3,8 @@ for command in funzip unzip unzipsfx zip zipcloak zipnote zipsplit
 do
     # download command:
     echo Downloading $command
-    curl -L https://github.com/holzschu/a-Shell-commands/releases/download/0.1/$command.wasm -o ~/Documents/bin/$command.wasm --create-dirs --silent
+    rm -f ~/Documents/bin/$command.wasm
+    curl -L https://github.com/holzschu/a-Shell-commands/releases/download/0.1/$command.wasm -o ~/Documents/bin/$command.wasm3 --create-dirs --silent
 	chmod +x ~/Documents/bin/$command.wasm
     # download man page
     curl -l https://raw.githubusercontent.com/holzschu/a-Shell-commands/master/man/man1/$command.1 -o ~/Library/man/man1/$command.1 --create-dirs --silent
