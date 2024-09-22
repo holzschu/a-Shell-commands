@@ -1,0 +1,23 @@
+#! /bin/sh
+# install file for mmd6 auxiliary files:
+
+packagename=${0##*/}
+
+# download archive:
+curl -L https://github.com/holzschu/a-Shell-commands/releases/download/0.1/markdown-it.tar.gz -o ~/tmp/markdown-it.tar.gz --create-dirs --silent
+
+mkdir -p ~/Library/node_modules
+cd  ~/Library
+tar -xzf ~/tmp/markdown-it.tar.gz 
+mkdir -p ~/Documents/bin
+mv markdown-it.js ~/Documents/bin/
+mv markdown-viewer.sh ~/Documents/bin/
+chmod +x ~/Documents/bin/markdown-it.js
+chmod +x ~/Documents/bin/markdown-viewer.sh
+cd -
+
+rm ~/tmp/markdown-it.tar.gz
+
+# download uninstall information:
+curl -L https://raw.githubusercontent.com/holzschu/a-Shell-commands/master/uninstall/$packagename -o ~/Documents/.pkg/$packagename --create-dirs --silent
+

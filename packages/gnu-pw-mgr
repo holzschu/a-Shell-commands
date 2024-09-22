@@ -1,0 +1,17 @@
+#! /bin/sh
+# Default install file for packages:
+
+packagename=${0##*/}
+
+# download command:
+curl -L https://github.com/holzschu/a-Shell-commands/releases/download/0.1/$packagename -o ~/Documents/bin/$packagename --create-dirs --silent
+chmod +x ~/Documents/bin/$packagename
+
+# download the other command: 
+curl -L https://github.com/holzschu/a-Shell-commands/releases/download/0.1/sort-pw-cfg -o ~/Documents/bin/sort-pw-cfg --create-dirs --silent
+chmod +x ~/Documents/bin/sort-pw-cfg
+
+# download man page: no man pages
+
+# download uninstall information:
+curl -L https://raw.githubusercontent.com/holzschu/a-Shell-commands/master/uninstall/$packagename -o ~/Documents/.pkg/$packagename --create-dirs --silent

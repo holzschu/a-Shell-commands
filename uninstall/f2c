@@ -1,9 +1,18 @@
 #! /bin/sh
 # remove command
-rm ~/Documents/bin/f2c
-rm ~/Library/lib/wasm32-wasi/libf2c.a
+rm -f ~/Documents/bin/f2c
+# libf2c.a was installed in two places; delete both:
+rm -f ~/Library/lib/wasm32-wasi/libf2c.a
+rm -f ~/Library/usr/lib/wasm32-wasi/libf2c.a
+rm -f ~/Library/usr/lib/wasm32-wasip1/libf2c.a
+rm -f ~/Library/usr/lib/wasm32-wasip1-threads/libf2c.a
+rm -f ~/Library/usr/lib/wasm32-wasi-threads/libf2c.a
+rm -f ~/Library/usr/include/wasm32-wasi/f2c.h
+rm -f ~/Library/usr/include/wasm32-wasip1/f2c.h
+rm -f ~/Library/usr/include/wasm32-wasip1-threads/f2c.h
+rm -f ~/Library/usr/include/wasm32-wasi-threads/f2c.h
 # remove man page
-rm ~/Library/man/man1/f2c.1
+rm -f ~/Library/man/man1/f2c.1
 # refresh man database
 mandocdb ~/Library/man
 #

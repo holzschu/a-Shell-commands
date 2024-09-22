@@ -1,0 +1,21 @@
+#! /bin/sh
+# install file for mmd6 auxiliary files:
+
+packagename=${0##*/}
+
+# download archive:
+curl -L https://github.com/holzschu/a-Shell-commands/releases/download/0.1/ace-editor.tar.gz -o ~/tmp/ace-editor.tar.gz --create-dirs --silent
+
+mkdir -p ~/Library/node_modules
+cd  ~/Library/node_modules
+tar -xzf ~/tmp/ace-editor.tar.gz 
+mkdir -p ~/Documents/bin
+mv ace-editor.sh ~/Documents/bin/
+chmod +x ~/Documents/bin/ace-editor.sh
+cd -
+
+rm ~/tmp/ace-editor.tar.gz
+
+# download uninstall information:
+curl -L https://raw.githubusercontent.com/holzschu/a-Shell-commands/master/uninstall/$packagename -o ~/Documents/.pkg/$packagename --create-dirs --silent
+

@@ -1,0 +1,14 @@
+#! /bin/sh
+
+# Default uninstall file for packages:
+packagename=${0##*/}
+
+rm ~/Documents/bin/codemirror.sh
+rm -rf ~/Library/codemirror*
+rm -rf ~/Library/node_modules/codemirror*
+rm -rf ~/Library/node_modules/@codemirror
+rm -rf ~/Library/node_modules/@lezer
+rm -rf ~/Library/node_modules/crelt
+rm -rf ~/Library/node_modules/style-mod
+rm -rf ~/Library/node_modules/w3c-keyname
+

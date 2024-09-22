@@ -1,0 +1,9 @@
+#! /bin/sh
+
+# Default uninstall file for packages:
+packagename=${0##*/}
+
+# remove commands
+rm ~/Documents/bin/$packagename
+rm ~/Documents/bin/sort-pw-cfg
+# remove man page: no man pages

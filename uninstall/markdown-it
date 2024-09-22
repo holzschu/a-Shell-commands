@@ -1,0 +1,121 @@
+#! /bin/sh
+
+# Default uninstall file for packages:
+packagename=${0##*/}
+
+rm ~/Documents/bin/markdown-it.js
+rm ~/Documents/bin/markdown-viewer.sh
+# Remove all npm packages installed by markdown-it.
+# This will create an issue when another JS command shares these packages
+# For the time being, there are none.
+rm -rf ~/Library/node_modules/@braintree
+rm -rf ~/Library/node_modules/character-entities
+rm -rf ~/Library/node_modules/cose-base
+rm -rf ~/Library/node_modules/cytoscape
+rm -rf ~/Library/node_modules/cytoscape-cose-bilkent
+rm -rf ~/Library/node_modules/cytoscape-fcose
+rm -rf ~/Library/node_modules/d3
+rm -rf ~/Library/node_modules/d3-array
+rm -rf ~/Library/node_modules/d3-axis
+rm -rf ~/Library/node_modules/d3-brush
+rm -rf ~/Library/node_modules/d3-chord
+rm -rf ~/Library/node_modules/d3-color
+rm -rf ~/Library/node_modules/d3-contour
+rm -rf ~/Library/node_modules/d3-delaunay
+rm -rf ~/Library/node_modules/d3-dispatch
+rm -rf ~/Library/node_modules/d3-drag
+rm -rf ~/Library/node_modules/d3-dsv
+rm -rf ~/Library/node_modules/d3-ease
+rm -rf ~/Library/node_modules/d3-fetch
+rm -rf ~/Library/node_modules/d3-force
+rm -rf ~/Library/node_modules/d3-format
+rm -rf ~/Library/node_modules/d3-geo
+rm -rf ~/Library/node_modules/d3-hierarchy
+rm -rf ~/Library/node_modules/d3-interpolate
+rm -rf ~/Library/node_modules/d3-path
+rm -rf ~/Library/node_modules/d3-polygon
+rm -rf ~/Library/node_modules/d3-quadtree
+rm -rf ~/Library/node_modules/d3-random
+rm -rf ~/Library/node_modules/d3-sankey
+rm -rf ~/Library/node_modules/d3-scale
+rm -rf ~/Library/node_modules/d3-scale-chromatic
+rm -rf ~/Library/node_modules/d3-selection
+rm -rf ~/Library/node_modules/d3-shape
+rm -rf ~/Library/node_modules/d3-time
+rm -rf ~/Library/node_modules/d3-time-format
+rm -rf ~/Library/node_modules/d3-timer
+rm -rf ~/Library/node_modules/d3-transition
+rm -rf ~/Library/node_modules/d3-zoom
+rm -rf ~/Library/node_modules/dagre-d3-es
+rm -rf ~/Library/node_modules/dagre-d3-renderer
+rm -rf ~/Library/node_modules/dagre-layout
+rm -rf ~/Library/node_modules/dayjs
+rm -rf ~/Library/node_modules/decode-named-character-reference
+rm -rf ~/Library/node_modules/delaunator
+rm -rf ~/Library/node_modules/dequal
+rm -rf ~/Library/node_modules/diff
+rm -rf ~/Library/node_modules/dompurify
+rm -rf ~/Library/node_modules/elkjs
+rm -rf ~/Library/node_modules/graphlib
+rm -rf ~/Library/node_modules/graphlibrary
+rm -rf ~/Library/node_modules/he
+rm -rf ~/Library/node_modules/heap
+rm -rf ~/Library/node_modules/highlight.js
+rm -rf ~/Library/node_modules/internmap
+rm -rf ~/Library/node_modules/khroma
+rm -rf ~/Library/node_modules/kleur
+rm -rf ~/Library/node_modules/layout-base
+rm -rf ~/Library/node_modules/linkify-it
+rm -rf ~/Library/node_modules/markdown-it
+rm -rf ~/Library/node_modules/markdown-it-abbr
+rm -rf ~/Library/node_modules/markdown-it-container
+rm -rf ~/Library/node_modules/markdown-it-deflist
+rm -rf ~/Library/node_modules/markdown-it-emoji
+rm -rf ~/Library/node_modules/markdown-it-footnote
+rm -rf ~/Library/node_modules/markdown-it-ins
+rm -rf ~/Library/node_modules/markdown-it-katex
+rm -rf ~/Library/node_modules/markdown-it-mark
+rm -rf ~/Library/node_modules/markdown-it-mathjax
+rm -rf ~/Library/node_modules/markdown-it-mermaid
+rm -rf ~/Library/node_modules/markdown-it-sub
+rm -rf ~/Library/node_modules/markdown-it-sup
+rm -rf ~/Library/node_modules/match-at
+rm -rf ~/Library/node_modules/mdast-util-from-markdown
+rm -rf ~/Library/node_modules/mdast-util-to-string
+rm -rf ~/Library/node_modules/mdurl
+rm -rf ~/Library/node_modules/mermaid
+rm -rf ~/Library/node_modules/micromark
+rm -rf ~/Library/node_modules/micromark-core-commonmark
+rm -rf ~/Library/node_modules/micromark-factory-destination
+rm -rf ~/Library/node_modules/micromark-factory-label
+rm -rf ~/Library/node_modules/micromark-factory-space
+rm -rf ~/Library/node_modules/micromark-factory-title
+rm -rf ~/Library/node_modules/micromark-factory-whitespace
+rm -rf ~/Library/node_modules/micromark-util-character
+rm -rf ~/Library/node_modules/micromark-util-chunked
+rm -rf ~/Library/node_modules/micromark-util-classify-character
+rm -rf ~/Library/node_modules/micromark-util-combine-extensions
+rm -rf ~/Library/node_modules/micromark-util-decode-numeric-character-reference
+rm -rf ~/Library/node_modules/micromark-util-decode-string
+rm -rf ~/Library/node_modules/micromark-util-encode
+rm -rf ~/Library/node_modules/micromark-util-html-tag-name
+rm -rf ~/Library/node_modules/micromark-util-normalize-identifier
+rm -rf ~/Library/node_modules/micromark-util-resolve-all
+rm -rf ~/Library/node_modules/micromark-util-sanitize-uri
+rm -rf ~/Library/node_modules/micromark-util-subtokenize
+rm -rf ~/Library/node_modules/micromark-util-symbol
+rm -rf ~/Library/node_modules/micromark-util-types
+rm -rf ~/Library/node_modules/moment
+rm -rf ~/Library/node_modules/mri
+rm -rf ~/Library/node_modules/non-layered-tidy-tree-layout
+rm -rf ~/Library/node_modules/robust-predicates
+rm -rf ~/Library/node_modules/rw
+rm -rf ~/Library/node_modules/sade
+rm -rf ~/Library/node_modules/stylis
+rm -rf ~/Library/node_modules/ts-dedent
+rm -rf ~/Library/node_modules/uc.micro
+rm -rf ~/Library/node_modules/unist-util-stringify-position
+rm -rf ~/Library/node_modules/uvu
+rm -rf ~/Library/node_modules/web-worker
+rm ~/Library/node_modules/markdown-viewer.html
+rm ~/Library/node_modules/markdown-viewer.js

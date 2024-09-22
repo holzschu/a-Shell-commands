@@ -1,7 +1,9 @@
 #! /bin/sh
 # remove command
-rm ~/Documents/bin/xz
-rm ~/Documents/bin/xzdec
+rm -f ~/Documents/bin/xz
+rm -f ~/Documents/bin/xzdec
+rm -f ~/Documents/bin/xz.wasm3
+rm -f ~/Documents/bin/xzdec.wasm3
 # remove man page
 rm ~/Library/man/man1/xz.1
 rm ~/Library/man/man1/xzdec.1

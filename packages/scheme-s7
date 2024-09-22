@@ -1,0 +1,15 @@
+#! /bin/sh
+# download command:
+curl -L https://github.com/holzschu/a-Shell-commands/releases/download/0.1/s7.tar.gz -o ~/tmp/s7.tar.gz --create-dirs --silent
+
+mkdir -p ~/Library/share
+cd ~/Library/share
+tar -xzf ~/tmp/s7.tar.gz
+mkdir -p ~/Documents/bin
+mv s7/repl ~/Documents/bin
+
+echo "s7 is a Scheme interpreter. Manual available here: https://ccrma.stanford.edu/software/s7/s7.html"
+echo "Binary installed in ~/Documents/bin/repl. Scheme files installed in ~/Library/share/s7."
+
+# download uninstall information:
+curl -L https://raw.githubusercontent.com/holzschu/a-Shell-commands/master/uninstall/scheme-s7 -o ~/Documents/.pkg/scheme-s7 --create-dirs --silent
