@@ -4,8 +4,9 @@
 packagename=${0##*/}
 
 # download command:
-curl -L https://github.com/holzschu/a-Shell-commands/releases/download/0.1/$packagename -o ~/Documents/bin/$packagename --create-dirs --silent
-chmod +x ~/Documents/bin/$packagename
+rm -f  ~/Documents/bin/$packagename
+curl -L https://github.com/holzschu/a-Shell-commands/releases/download/0.1/$packagename -o ~/Documents/bin/$packagename.wasm3 --create-dirs --silent
+chmod +x ~/Documents/bin/$packagename.wasm3
 
 # download uninstall information:
 curl -L https://raw.githubusercontent.com/holzschu/a-Shell-commands/master/uninstall/$packagename -o ~/Documents/.pkg/$packagename --create-dirs --silent
