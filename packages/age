@@ -1,0 +1,15 @@
+#! /bin/sh
+# download command:
+echo Downloading age and age-keygen 
+curl -L https://github.com/holzschu/a-Shell-commands/releases/download/0.1/age.wasm3 -o ~/Documents/bin/age.wasm3 --create-dirs --silent
+chmod +x ~/Documents/bin/age.wasm3
+curl -L https://github.com/holzschu/a-Shell-commands/releases/download/0.1/age-keygen.wasm3 -o ~/Documents/bin/age-keygen.wasm3 --create-dirs --silent
+chmod +x ~/Documents/bin/age-keygen.wasm3
+# download man page
+echo Downloading man pages
+curl -l https://raw.githubusercontent.com/holzschu/a-Shell-commands/master/man/man1/age.1 -o ~/Library/man/man1/age.1 --create-dirs --silent
+curl -l https://raw.githubusercontent.com/holzschu/a-Shell-commands/master/man/man1/age-keygen.1 -o ~/Library/man/man1/age-keygen.1 --create-dirs --silent
+# refresh man database
+mandocdb ~/Library/man
+# download uninstall information:
+curl -L https://raw.githubusercontent.com/holzschu/a-Shell-commands/master/uninstall/age -o ~/Documents/.pkg/age --create-dirs --silent

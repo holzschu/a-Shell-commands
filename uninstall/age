@@ -1,0 +1,11 @@
+#! /bin/sh
+# remove command
+rm -f ~/Documents/bin/age.wasm3
+rm -f ~/Documents/bin/age-keygen.wasm3
+# remove man page
+rm ~/Library/man/man1/age.1
+rm ~/Library/man/man1/age-keygen.1
+# refresh man database
+mandocdb ~/Library/man
+#
+
