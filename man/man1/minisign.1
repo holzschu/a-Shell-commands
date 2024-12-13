@@ -1,0 +1,165 @@
+.\" generated with Ronn/v0.7.3
+.\" http://github.com/rtomayko/ronn/tree/0.7.3
+.
+.TH "MINISIGN" "1" "January 2023" "" ""
+.
+.SH "NAME"
+\fBminisign\fR \- A dead simple tool to sign files and verify signatures\.
+.
+.SH "SYNOPSIS"
+\fBminisign\fR \-G [\-p pubkey_file] [\-s seckey_file] [\-W]
+.
+.P
+\fBminisign\fR \-R [\-s seckey_file] [\-p pubkey_file]
+.
+.P
+\fBminisign\fR \-C [\-s seckey_file] [\-W]
+.
+.P
+\fBminisign\fR \-S [\-H] [\-x sig_file] [\-s seckey_file] [\-c untrusted_comment] [\-t trusted_comment] \-m file [file \.\.\.]
+.
+.P
+\fBminisign\fR \-V [\-x sig_file] [\-p pubkey_file | \-P pubkey] [\-o] [\-q] \-m file
+.
+.SH "DESCRIPTION"
+\fBMinisign\fR is a dead simple tool to sign files and verify signatures\.
+.
+.P
+It is portable, lightweight, and uses the highly secure Ed25519 \fIhttp://ed25519\.cr\.yp\.to/\fR public\-key signature system\.
+.
+.SH "OPTIONS"
+These options control the actions of \fBminisign\fR\.
+.
+.TP
+\fB\-G\fR
+Generate a new key pair
+.
+.TP
+\fB\-C\fR
+Change/remove the password of a secret key
+.
+.TP
+\fB\-R\fR
+Recreate a public key file from a secret key file
+.
+.TP
+\fB\-S\fR
+Sign files
+.
+.TP
+\fB\-V\fR
+Verify that a signature is valid for a given file
+.
+.TP
+\fB\-H\fR
+Requires the input to be prehashed
+.
+.TP
+\fB\-l\fR
+Sign using the legacy format
+.
+.TP
+\fB\-m <file>\fR
+File to sign/verify
+.
+.TP
+\fB\-o\fR
+Combined with \-V, output the file content after verification
+.
+.TP
+\fB\-p <pubkey_file>\fR
+Public key file (default: \./minisign\.pub)
+.
+.TP
+\fB\-P <pubkey>\fR
+Public key, as a base64 string
+.
+.TP
+\fB\-s <seckey_file>\fR
+Secret key file (default: ~/Documents/\.minisign/minisign\.key)
+.
+.TP
+\fB\-W\fR
+Do not encrypt/decrypt the secret key with a password
+.
+.TP
+\fB\-x <sig_file>\fR
+Signature file (default: <file>\.minisig)
+.
+.TP
+\fB\-c <comment>\fR
+Add a one\-line untrusted comment
+.
+.TP
+\fB\-t <comment>\fR
+Add a one\-line trusted comment
+.
+.TP
+\fB\-q\fR
+Quiet mode, suppress output
+.
+.TP
+\fB\-Q\fR
+Pretty quiet mode, only print the trusted comment
+.
+.TP
+\fB\-f\fR
+Force\. Combined with \-G, overwrite a previous key pair
+.
+.TP
+\fB\-v\fR
+Display version number
+.
+.SH "EXAMPLES"
+Creating a key pair
+.
+.P
+\fBminisign\fR \-G
+.
+.P
+The public key is printed and put into the \fBminisign\.pub\fR file\. The secret key is encrypted and saved as a file named \fB~/Documents/\.minisign/minisign\.key\fR\.
+.
+.P
+Signing files
+.
+.P
+$ \fBminisign\fR \-Sm myfile\.txt $ \fBminisign\fR \-Sm myfile\.txt myfile2\.txt *\.c
+.
+.P
+Or to include a comment in the signature, that will be verified and displayed when verifying the file:
+.
+.P
+$ \fBminisign\fR \-Sm myfile\.txt \-t \'This comment will be signed as well\'
+.
+.P
+The secret key is loaded from \fB${MINISIGN_CONFIG_DIR}/minisign\.key\fR, \fB~/Documents/\.minisign/minisign\.key\fR, or its path can be explicitly set with the \fB\-s <path>\fR command\-line switch\.
+.
+.P
+Verifying a file
+.
+.P
+$ \fBminisign\fR \-Vm myfile\.txt \-P <pubkey>
+.
+.P
+or
+.
+.P
+$ \fBminisign\fR \-Vm myfile\.txt \-p signature\.pub
+.
+.P
+This requires the signature \fBmyfile\.txt\.minisig\fR to be present in the same directory\.
+.
+.P
+The public key can either reside in a file (\fB\./minisign\.pub\fR by default) or be directly specified on the command line\.
+.
+.SH "Notes"
+Signature files include an untrusted comment line that can be freely modified, even after signature creation\.
+.
+.P
+They also include a second comment line, that cannot be modified without the secret key\.
+.
+.P
+Trusted comments can be used to add instructions or application\-specific metadata (intended file name, timestamps, resource identifiers, version numbers to prevent downgrade attacks)\.
+.
+.SH "AUTHOR"
+Frank Denis (github [at] pureftpd [dot] org)
