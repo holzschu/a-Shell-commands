@@ -5,7 +5,7 @@ rm -f ~/Documents/bin/lzmadec.wasm
 curl -L https://github.com/holzschu/a-Shell-commands/releases/download/0.1/lzmadec.wasm -o ~/Documents/bin/lzmadec.wasm3 --create-dirs --silent
 chmod +x ~/Documents/bin/lzmadec.wasm3
 rm -f ~/Documents/bin/lzmainfo.wasm
-curl -L https://github.com/holzschu/a-Shell-commands/releases/download/0.1/lzmainfo.wasm3 -o ~/Documents/bin/lzmainfo.wasm --create-dirs --silent
+curl -L https://github.com/holzschu/a-Shell-commands/releases/download/0.1/lzmainfo.wasm -o ~/Documents/bin/lzmainfo.wasm3 --create-dirs --silent
 chmod +x ~/Documents/bin/lzmainfo.wasm3
 # download man page
 echo Downloading man pages
