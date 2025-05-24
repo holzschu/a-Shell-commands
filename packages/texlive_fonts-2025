@@ -1,0 +1,23 @@
+#! /bin/sh
+# install file for LLVM/clang auxiliary files:
+
+packagename=${0##*/}
+
+# download archive:
+echo "Downloading the texlive-2025 OpenType and TrueType fonts: (this may take a while)"
+curl -L https://github.com/holzschu/a-Shell-commands/releases/download/0.1/texlive_fonts_2025.tar.gz -o ~/tmp/texlive_fonts.tar.gz --create-dirs 
+echo "Downloading done, unpacking:"
+
+mkdir -p ~/Library/texlive
+cd  ~/Library/texlive
+tar -xzf ~/tmp/texlive_fonts.tar.gz 
+cd -
+
+rm ~/tmp/texlive_fonts.tar.gz
+echo "Done, updating command list"
+# update commands list:
+updateCommands
+
+# download uninstall information:
+curl -L https://raw.githubusercontent.com/holzschu/a-Shell-commands/master/uninstall/$packagename -o ~/Documents/.pkg/$packagename --create-dirs --silent
+

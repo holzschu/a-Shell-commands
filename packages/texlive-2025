@@ -1,0 +1,33 @@
+#! /bin/sh
+# install file for LLVM/clang auxiliary files:
+
+packagename=${0##*/}
+
+if [ -d ~/Library/texlive/2023 ] 
+then
+    echo "Moving your ~/Library/texlive/2023 directory to ~/Library/texlive/2025"
+    mv ~/Library/texlive/2023 ~/Library/texlive/2025
+fi
+if [ -d ~/Library/texlive/2024 ] 
+then
+    echo "Moving your ~/Library/texlive/2024 directory to ~/Library/texlive/2025"
+    mv ~/Library/texlive/2024 ~/Library/texlive/2025
+fi
+# download archive:
+echo "Downloading the texlive-2025 distribution: (this may take a while)"
+curl -L https://github.com/holzschu/a-Shell-commands/releases/download/0.1/texlive_2025.tar.gz -o ~/tmp/texlive.tar.gz --create-dirs 
+echo "Downloading done, unpacking:"
+
+mkdir -p ~/Library/texlive
+cd  ~/Library/texlive
+tar -xzf ~/tmp/texlive.tar.gz 
+cd -
+
+rm ~/tmp/texlive.tar.gz
+echo "Done, updating command list"
+# update commands list:
+updateCommands
+
+# download uninstall information:
+curl -L https://raw.githubusercontent.com/holzschu/a-Shell-commands/master/uninstall/$packagename -o ~/Documents/.pkg/$packagename --create-dirs --silent
+

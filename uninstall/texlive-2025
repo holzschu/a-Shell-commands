@@ -1,0 +1,8 @@
+#! /bin/sh
+
+# Default uninstall file for packages:
+packagename=${0##*/}
+
+rm -rf ~/Library/texlive/2025
+# update commands list:
+updateCommands

@@ -1,0 +1,9 @@
+#! /bin/sh
+
+# Default uninstall file for packages:
+packagename=${0##*/}
+
+rm -rf ~/Library/texlive/2025/texmf-dist/fonts/opentype
+rm -rf ~/Library/texlive/2025/texmf-dist/fonts/truetype
+# update commands list:
+updateCommands
