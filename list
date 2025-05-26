@@ -51,7 +51,9 @@ split
 sqlite3
 strings
 texlive
+texlive-2025
 texlive_fonts
+texlive_fonts-2025
 unexpand
 which
 xmlcatalog
