@@ -11,6 +11,24 @@ file, ffmpeg, tree, ctags, readtags and xz are also part of the a-Shell AppStore
 
 The idea is that we can share pre-compiled commands. Submit yours through pull-requests. 
 
+## Install from a-Shell
+
+Use a-Shell's builtin tool, `pkg`, to install available [commands](https://github.com/holzschu/a-Shell-commands/blob/master/list):
+
+```sh
+# list available commands
+pkg search 
+
+# pkg install [command]
+pkg install base64
+pkg install which
+pkg install strings
+pkg install column
+
+# list installed commands
+pkg list
+```
+
 ## List of commands, with their source code:
 
 - [base64](https://github.com/holzschu/a-Shell-commands/releases/download/0.1/base64): http://base64.sourceforge.net
