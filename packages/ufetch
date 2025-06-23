@@ -1,0 +1,11 @@
+#!/bin/sh
+# install file for ufetch:
+
+packagename=${0##*/}
+
+# download command:
+curl -L https://gitlab.com/kebo/ufetch/-/raw/v0.4-ashell/ufetch-ashell -o ~/Documents/bin/"$packagename" --create-dirs --silent
+chmod +x ~/Documents/bin/"$packagename"
+
+# download uninstall information:
+curl -L https://raw.githubusercontent.com/holzschu/a-Shell-commands/master/uninstall/"$packagename" -o ~/Documents/.pkg/"$packagename" --create-dirs --silent

@@ -54,6 +54,7 @@ texlive
 texlive-2025
 texlive_fonts
 texlive_fonts-2025
+ufetch
 unexpand
 which
 xmlcatalog
