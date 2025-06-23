@@ -1,0 +1,6 @@
+#!/bin/sh
+
+packagename=${0##*/}
+
+# remove command
+rm ~/Documents/bin/"$packagename"
