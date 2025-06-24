@@ -3,4 +3,4 @@
 packagename=${0##*/}
 
 # remove command
-rm ~/Documents/bin/"$packagename"
+rm ~/Documents/bin/"$packagename".wasm3
