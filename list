@@ -50,6 +50,7 @@ seq
 split
 sqlite3
 strings
+swift-format
 texlive
 texlive-2025
 texlive_fonts
