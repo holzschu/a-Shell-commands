@@ -1,0 +1,47 @@
+#! /bin/sh
+
+# folders
+rm -rf ~/Library/lib/python3.*/site-packages/jupyter*
+rm -rf ~/Library/lib/python3.*/site-packages/nbclassic*
+rm -rf ~/Library/lib/python3.*/site-packages/notebook*
+rm -rf ~/Library/lib/python3.*/site-packages/nbconvert*
+rm -rf ~/Library/lib/python3.*/site-packages/nbformat*
+rm -rf ~/Library/lib/python3.*/site-packages/nbclient*
+rm -rf ~/Library/lib/python3.*/site-packages/ipykernel*
+rm -rf ~/Library/lib/python3.*/site-packages/qtconsole*
+rm -rf ~/Library/lib/python3.*/site-packages/ipywidgets*
+rm -rf ~/Library/lib/python3.*/site-packages/ipympl*
+rm -rf ~/Library/lib/python3.*/site-packages/ipysheet*
+rm -rf ~/Library/share/jupyter
+rm -rf ~/Library/etc/jupyter
+# Individual files
+rm ~/Library/bin/jupyter-run
+rm ~/Library/bin/jupyter-labextension
+rm ~/Library/bin/jupyter-nbclassic-serverextension
+rm ~/Library/bin/jupyter-nbclassic
+rm ~/Library/bin/jupyter-contrib
+rm ~/Library/bin/jupyter-notebook
+rm ~/Library/bin/jupyter-labhub
+rm ~/Library/bin/jupyter-server
+rm ~/Library/bin/jupyter-dejavu
+rm ~/Library/bin/jupyter-nbconvert
+rm ~/Library/bin/jupyter-lab
+rm ~/Library/bin/jupyter-nbextensions_configurator
+rm ~/Library/bin/jupyter-troubleshoot
+rm ~/Library/bin/jupyter-nbclassic-bundlerextension
+rm ~/Library/bin/jupyter-migrate
+rm ~/Library/bin/jupyter-console
+rm ~/Library/bin/jupyter-events
+rm ~/Library/bin/jupyter-trust
+rm ~/Library/bin/jupyter-nbclassic-extension
+rm ~/Library/bin/jupyter-qtconsole
+rm ~/Library/bin/jupyter-kernelspec
+rm ~/Library/bin/jupyter-kernel
+rm ~/Library/bin/jupyter
+rm ~/Library/bin/jupyter-execute
+rm ~/Library/share/icons/hicolor/scalable/apps/jupyterlab.svg
+rm ~/Library/share/icons/hicolor/scalable/apps/nbclassic.svg
+rm ~/Library/share/icons/hicolor/scalable/apps/notebook.svg
+rm ~/Library/share/applications/jupyter-nbclassic.desktop
+rm ~/Library/share/applications/jupyterlab.desktop
+rm ~/Library/share/applications/jupyter-notebook.desktop

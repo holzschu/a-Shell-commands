@@ -1,0 +1,34 @@
+#! /bin/sh
+
+if [ $APPNAME != "a-Shell" ]
+then
+	echo "The Jupyter package requires a-Shell (not a-Shell mini)"
+	exit 0
+fi
+
+major=`echo $APPVERSION | cut -d. -f1`
+minor=`echo $APPVERSION | cut -d. -f2`
+revision=`echo $APPVERSION | cut -d. -f3`
+
+if [ $major -eq 1 ]
+then
+	if [ $minor -le 16 ]
+	then
+		echo "The Jupyter package requires a-Shell version 1.17 and above"
+		echo You have version $major.$minor.$revision
+		exit 0
+	fi
+fi
+
+# We are running a-Shell, version 1.17 or better
+# download package:
+curl -L https://github.com/holzschu/a-Shell-commands/releases/download/0.1/Jupyter.tar.gz -o ~/tmp/Jupyter.tar.gz --create-dirs --silent
+
+# Jupyter installs in ~/Library/bin ~/Library/etc, ~/Library/share and ~/Library/lib/python3.xx/site-packages 
+cd ~/Library
+tar -xzf ~/tmp/Jupyter.tar.gz
+rm ~/tmp/Jupyter.tar.gz
+
+# download uninstall information:
+curl -L https://raw.githubusercontent.com/holzschu/a-Shell-commands/master/uninstall/jupyter -o ~/Documents/.pkg/jupyter --create-dirs --silent
+
