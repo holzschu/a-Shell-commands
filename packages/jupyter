@@ -6,9 +6,10 @@ then
 	exit 0
 fi
 
-major=`echo $APPVERSION | cut -d. -f1`
-minor=`echo $APPVERSION | cut -d. -f2`
-revision=`echo $APPVERSION | cut -d. -f3`
+major=${APPVERSION%%.*}
+rest=${APPVERSION#*.}
+minor=${rest%%.*}
+revision=${rest#*.}
 
 if [ $major -eq 1 ]
 then
