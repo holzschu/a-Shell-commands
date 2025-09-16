@@ -2,7 +2,7 @@
 # install file for swift-format:
 
 packagename=${0##*/}
-packageversion=601.0.0
+packageversion=602.0.0
 
 # download command:
 curl -L https://github.com/kkebo/swift-format/releases/download/$packageversion-wasm32-wasi/swift-format.wasm -o ~/Documents/bin/"$packagename".wasm3 --create-dirs --silent
