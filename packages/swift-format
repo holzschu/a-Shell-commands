@@ -7,6 +7,9 @@ packageversion=602.0.0
 # download command:
 curl -L https://github.com/kkebo/swift-format/releases/download/$packageversion-wasm32-wasi/swift-format.wasm -o ~/Documents/bin/"$packagename".wasm3 --create-dirs --silent
 chmod +x ~/Documents/bin/"$packagename".wasm3
-
+# download man page
+curl -L https://raw.githubusercontent.com/holzschu/a-Shell-commands/master/man/man1/"$packagename".1 -o ~/Library/man/man1/"$packagename".1 --create-dirs --silent
+# refresh man database
+mandocdb ~/Library/man
 # download uninstall information:
 curl -L https://raw.githubusercontent.com/holzschu/a-Shell-commands/master/uninstall/"$packagename" -o ~/Documents/.pkg/"$packagename" --create-dirs --silent

@@ -4,3 +4,7 @@ packagename=${0##*/}
 
 # remove command
 rm ~/Documents/bin/"$packagename".wasm3
+# remove man page
+rm ~/Library/man/man1/"$packagename".1
+# refresh man database
+mandocdb ~/Library/man
