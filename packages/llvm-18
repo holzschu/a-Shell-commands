@@ -1,6 +1,12 @@
 #! /bin/sh
 # install file for LLVM/clang auxiliary files:
 
+if [ $APPNAME != "a-Shell" ]
+then
+	echo "llvm-18 can only be installed in a-Shell, not a-Shell mini"
+	exit
+fi
+
 packagename=${0##*/}
 
 # download archive:
