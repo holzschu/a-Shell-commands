@@ -38,5 +38,3 @@ The idea is that we can share pre-compiled commands. Submit yours through pull-r
   - [ffmpeg_lite](https://github.com/holzschu/a-Shell-commands/releases/download/0.1/ffmpeg_lite.wasm) (decoders: H263, H264, Mpeg4, MKV, AAC, AC3 only, 3.2 MB)
 - [tree](https://github.com/holzschu/a-Shell-commands/releases/download/0.1/tree.wasm): http://mama.indstate.edu/users/ice/tree/
 - [xz](https://github.com/holzschu/a-Shell-commands/releases/download/0.1/xz.wasm), [xzdec](https://github.com/holzschu/a-Shell-commands/releases/download/0.1/xzdec.wasm): https://git.tukaani.org/xz
-
-<!--  this is an additional comment -->
