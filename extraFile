@@ -1,5 +1,5 @@
 This file is added in order to cause a bug
-(let's cause some conflicts)
+another conflict
 (it spectacularly fails at that)
 
 adding another line at the end
