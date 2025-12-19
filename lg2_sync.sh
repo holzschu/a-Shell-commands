@@ -133,7 +133,7 @@ LOCAL=$(lg2 rev-parse refs/heads/main 2>/dev/null)
 
 	if [ -z "$REMOTE" ]; then
 	print_msg "${YELLOW}No upstream branch set, pushing to origin...${NO_COLOR}"
-	if ! lg2 push -u origin; then
+	if ! lg2 push origin; then
 	print_msg "${RED}Error: Push failed${NO_COLOR}"
 	cd "$ORIGINAL_DIR"
 	exit 1
