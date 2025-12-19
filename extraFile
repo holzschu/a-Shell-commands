@@ -1,3 +1,8 @@
 This file is added in order to cause a bug
 adding a conflict on purpose
+<<<<<<< HEAD
 And a conflicting line
+=======
+And a different conflicting line
+(it spectacularly fails at that)
+>>>>>>> master
