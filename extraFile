@@ -1,4 +1,4 @@
 This file is added in order to cause a bug
 adding a conflict on purpose
-
+And a conflicting line
 (it spectacularly fails at that)
