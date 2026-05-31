@@ -12,8 +12,9 @@ comm
 csplit
 cut
 expand
-false
 f2c
+false
+figlet
 fmt
 fold
 gawk

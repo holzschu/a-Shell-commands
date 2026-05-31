@@ -1,0 +1,23 @@
+#! /bin/sh
+# Default install file for packages:
+
+packagename=${0##*/}
+
+# download command:
+curl -L https://github.com/holzschu/a-Shell-commands/releases/download/0.1/$packagename.tar.gz -o ~/tmp/$packagename.tar.gz --create-dirs --silent
+cd ~/tmp
+tar -xzf ~/tmp/$packagename.tar.gz
+mkdir -p ~/Documents/bin
+mv figlet.wasm3 chkfont.wasm3 figlist showfigfonts ~/Documents/bin
+rm -rf ~/Documents/.figlet_fonts
+mv fonts ~/Documents/.figlet_fonts 
+chmod +x ~/Documents/bin/figlet.wasm3
+chmod +x ~/Documents/bin/chkfont.wasm3
+chmod +x ~/Documents/bin/showfigfonts
+chmod +x ~/Documents/bin/figlist
+mkdir -p ~/Library/man/man6
+mv figlet.6 chkfont.6 figlist.6 showfigfonts.6    ~/Library/man/man6
+# refresh man database
+mandocdb ~/Library/man
+# download uninstall information:
+curl -L https://raw.githubusercontent.com/holzschu/a-Shell-commands/master/uninstall/$packagename -o ~/Documents/.pkg/$packagename --create-dirs --silent
