@@ -6,25 +6,22 @@ packagename=${0##*/}
 # download command:
 # the pkg command has already created ~/tmp/pandoc and we need to create the pandoc directory so we move one level down, with a different name:
 curl -L https://github.com/jgm/pandoc/releases/download/3.10/pandoc-3.10.wasm.zip -o ~/tmp/pandok/pandoc.zip --create-dirs --silent
-ls -lR ~/tmp
-cp ~/tmp/pandoc ~/tmp/pandoc.debug
-file ~/tmp/pandok/pandoc.zip
 echo uncompressing pandoc
 cd ~/tmp/pandok
+# The unzip method fails sometimes on iOS 16 (probably because of something in the webAssembly engine in iOS 16).
+# But pandoc itself also fails on iOS 16 (probably for the same reason)
 # use Wasm for unzip:
 if [ -f "$HOME/Documents/bin/unzip.wasm3" ]; then
-	echo using wasm: wasm ~/Documents/bin/unzip.wasm3 ~/tmp/pandok/pandoc.zip
 	wasm ~/Documents/bin/unzip.wasm3 ~/tmp/pandok/pandoc.zip
 elif [ -f "$HOME/Documents/bin/unzip" ]; then
-	echo using wasm:
 	wasm ~/Documents/bin/unzip ~/tmp/pandok/pandoc.zip
 else
-	echo You need to install unzip with \"pkg install zip\" first
+	echo You need to install unzip first, with \"pkg install zip\" first
+	exit 0
 fi
 echo moving binary in place and installing man page
 mv pandoc/pandoc.wasm ~/Documents/bin/pandoc 
 cd -
-rm -rf ~/tmp/pandok
 chmod +x ~/Documents/bin/$packagename
 # download man page
 curl -L https://raw.githubusercontent.com/holzschu/a-Shell-commands/master/man/man1/$packagename.1 -o ~/Library/man/man1/$packagename.1 --create-dirs --silent
