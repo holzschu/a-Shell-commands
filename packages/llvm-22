@@ -3,20 +3,33 @@
 
 if [ $APPNAME != "a-Shell" ]
 then
-	echo "llvm-18 can only be installed in a-Shell, not a-Shell mini"
+	echo "llvm-22 can only be installed in a-Shell, not a-Shell mini"
 	exit
 fi
 
 packagename=${0##*/}
 
 # download archive:
-curl -L https://github.com/holzschu/a-Shell-commands/releases/download/0.1/llvm-18.tar.gz -o ~/tmp/llvm.tar.gz --create-dirs --silent
+curl -L https://github.com/holzschu/a-Shell-commands/releases/download/0.1/llvm-22.tar.gz -o ~/tmp/llvm.tar.gz --create-dirs --silent
 
 cd  ~/Library/
 tar -xzf ~/tmp/llvm.tar.gz 
 cd -
 
 rm ~/tmp/llvm.tar.gz
+#
+# clean up old files (from LLVM-18):
+rm -rf ~/Library/lib/clang/18
+rm -rf ~/Library/usr/include/wasm32-wasip2
+rm -rf ~/Library/usr/include/wasm32-wasip1-threads
+rm -rf ~/Library/usr/include/wasm32-wasi-threads
+rm -rf ~/Library/usr/lib/wasm32-wasip2
+rm -rf ~/Library/usr/lib/wasm32-wasip1-threads
+rm -rf ~/Library/usr/lib/wasm32-wasi-threads
+rm -rf ~/Library/usr/share/wasm32-wasip2
+rm -rf ~/Library/usr/share/wasm32-wasip1-threads
+rm -rf ~/Library/usr/share/wasm32-wasi-threads
+
 # update commands list:
 updateCommands
 
