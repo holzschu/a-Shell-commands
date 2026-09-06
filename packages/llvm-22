@@ -12,9 +12,9 @@ packagename=${0##*/}
 # download archive:
 case $CCC_OVERRIDE_OPTIONS in
         *wasm-use-legacy-eh=false*)
-				curl -L https://github.com/holzschu/a-Shell-commands/releases/download/0.1/llvm-22-modern.tar.gz -o ~/tmp/llvm.tar.gz --create-dirs --silent
+				curl -L https://github.com/holzschu/a-Shell-commands/releases/download/0.1/llvm-22-modern.tar.gz -o ~/tmp/llvm.tar.gz --create-dirs --silent;;
         *)
-				curl -L https://github.com/holzschu/a-Shell-commands/releases/download/0.1/llvm-22.tar.gz -o ~/tmp/llvm.tar.gz --create-dirs --silent
+				curl -L https://github.com/holzschu/a-Shell-commands/releases/download/0.1/llvm-22.tar.gz -o ~/tmp/llvm.tar.gz --create-dirs --silent;;
 esac
 
 cd  ~/Library/
