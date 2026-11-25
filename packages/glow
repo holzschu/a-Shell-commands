@@ -5,7 +5,10 @@ packagename=${0##*/}
 
 # download command:
 curl -L https://github.com/holzschu/a-Shell-commands/releases/download/0.1/$packagename -o ~/Documents/bin/$packagename.wasm --create-dirs --silent
-curl -L https://github.com/holzschu/a-Shell-commands/releases/download/0.1/$packagename.sh -o ~/Documents/bin/$packagename --create-dirs --silent
+cat << 'EOF' > ~/Documents/bin/$packagename
+#!/bin/sh
+wasmkit $HOME/Documents/bin/glow.wasm "$@"
+EOF
 
 chmod +x ~/Documents/bin/$packagename
 # download man page
