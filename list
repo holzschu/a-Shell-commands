@@ -58,6 +58,7 @@ rs
 scheme-s7
 sd
 seq
+shellcheck
 sg
 split
 sqlite3
