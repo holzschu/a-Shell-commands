@@ -1,0 +1,2 @@
+#!/bin/sh
+rm -f "$HOME/Documents/bin/yq" "$HOME/Documents/bin/yq.wasm3" "$HOME/Library/man/man1/yq.1"
