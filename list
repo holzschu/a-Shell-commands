@@ -56,6 +56,7 @@ rs
 scheme-s7
 sd
 seq
+shellcheck
 split
 sqlite3
 strings

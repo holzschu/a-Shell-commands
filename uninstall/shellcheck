@@ -1,0 +1,2 @@
+#!/bin/sh
+rm -f "$HOME/Documents/bin/shellcheck" "$HOME/Documents/bin/shellcheck.wasm" "$HOME/Library/man/man1/shellcheck.1"
