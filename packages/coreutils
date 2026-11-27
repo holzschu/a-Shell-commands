@@ -1,0 +1,51 @@
+#!/bin/sh
+set -e
+
+name=coreutils
+bin="$HOME/Documents/bin"
+receipts="$HOME/Documents/.pkg"
+catalog=${PKG_SERVER:-https://raw.githubusercontent.com/holzschu/a-Shell-commands/master}
+# PKG_SERVER selects the catalog; an asset mirror is independent.
+assets=${PKG_ASSET_SERVER:-https://github.com/holzschu/a-Shell-commands/releases/download/0.1}
+expected=f1322a53f23f56305a53b6148aa39b672b9efaefbedd9f7731d96689f9f0e7e6
+
+if [ -f "$receipts/$name" ] && [ -x "$bin/$name" ] && [ -f "$bin/$name.wasm3" ]; then
+    digest=$(sha256 "$bin/$name.wasm3")
+    if [ "${digest##* }" = "$expected" ]; then
+        echo "$name is already installed"
+        exit 0
+    fi
+fi
+for path in "$receipts/$name" "$bin/$name" "$bin/$name.wasm3"; do
+    if [ -e "$path" ] || [ -L "$path" ]; then
+        echo "$name: refusing to replace $path; remove it before reinstalling" >&2
+        exit 1
+    fi
+done
+
+echo "Installing $name"
+mkdir -p "$bin" "$receipts"
+stage="$HOME/tmp/$name.download.$$"
+while [ -e "$stage" ] || [ -L "$stage" ]; do
+    stage="$stage.next"
+done
+mkdir "$stage"
+trap 'rm -f "$stage/guest" "$stage/launcher" "$stage/uninstall"; rmdir "$stage"' 0
+trap 'exit 1' HUP INT TERM
+
+curl -fLSs "${assets%/}/$name.wasm" -o "$stage/guest"
+digest=$(sha256 "$stage/guest")
+if [ "${digest##* }" != "$expected" ]; then
+    echo "$name: SHA-256 mismatch" >&2
+    exit 1
+fi
+curl -fLSs "${catalog%/}/uninstall/$name" -o "$stage/uninstall"
+cat >"$stage/launcher" <<'EOF'
+#!/bin/sh
+wasmkit "$HOME/Documents/bin/coreutils.wasm3" "$@"
+EOF
+chmod +x "$stage/launcher"
+# If publication is interrupted, pkg remove can clean up the partial install.
+mv "$stage/uninstall" "$receipts/$name"
+mv "$stage/guest" "$bin/$name.wasm3"
+mv "$stage/launcher" "$bin/$name"

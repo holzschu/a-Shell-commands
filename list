@@ -10,6 +10,7 @@ col
 colrm
 column
 comm
+coreutils
 csplit
 cut
 expand
@@ -46,6 +47,7 @@ morse
 ncal
 nl
 nnn
+numbat
 oathtool
 pandoc
 paste
@@ -57,6 +59,7 @@ scheme-s7
 sd
 seq
 shellcheck
+sg
 split
 sqlite3
 strings
