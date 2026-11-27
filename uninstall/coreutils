@@ -1,0 +1,2 @@
+#!/bin/sh
+rm -f "$HOME/Documents/bin/coreutils" "$HOME/Documents/bin/coreutils.wasm3"
