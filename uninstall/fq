@@ -1,0 +1,2 @@
+#!/bin/sh
+rm -f "$HOME/Documents/bin/fq" "$HOME/Documents/bin/fq.wasm3" "$HOME/Library/man/man1/fq.1"
