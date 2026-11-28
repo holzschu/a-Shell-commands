@@ -1,2 +1,2 @@
 #!/bin/sh
-rm -f "$HOME/Documents/bin/sg" "$HOME/Documents/bin/sg.wasm3"
+rm -f "$HOME/Documents/bin/sg"
